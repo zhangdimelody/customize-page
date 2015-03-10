@@ -7,6 +7,10 @@ require.config({
 		,"_": "vendor/components/lodash/index"
 		,"requirejs": "vendor/components/requirejs/index"
 		,"talent" : 'vendor/components/talent/index'
+		,"jqueryui" : 'vendor/legacy/jqueryui'
+		,"jscolor" : 'vendor/legacy/jscolor'
+    	,'$.tree' : 'vendor/legacy/jquery.ztree.core-3.5'
+		,"mockjax": "vendor/components/jquery.mockjax/index"
 	},
 	shim: {
 		'$': {
@@ -26,6 +30,12 @@ require.config({
 		,'talent': {
 			deps: ['marionette'],
 			exports: 'Talent'
+		}
+		,'jqueryui': {
+			deps: ['$']
+		}
+		,'mockjax': {
+			deps: ['$']
 		}
 	}
 });

@@ -1,0 +1,38 @@
+
+<div class="clearfix sort_wrap" id="<%=id %>">
+	<dd>
+		<span class="delete_icon"></span><span class="folder_icon"></span>
+		<input  class="self_input_c" flag="name" value="<%-name %>" />
+		<!-- <a class="delete_this fl"></a> -->
+		<div class=" width180 text_center" style="display:none;">
+			
+			<p class="select_set_wrap">
+				<div class="mgtop10 mgbtm10 choose_sel_wrap">
+					<span>下拉</span>
+					<a id="0" type="chooseSelect" class=<%= (select=="")? "checked" : "" %>>无</a>
+					<a id="1" type="chooseSelect" class=<%= (select!="")? "checked" : "" %>>有</a>
+				</div>
+
+				<div class="second_select"  hoverid="<%=id %>" <% if(select==""){ %> style="display:none;" <% } %>>
+					<a href="javascript:;" class="add_select_item">添加下拉</a>
+				<% if(select!=""){ %>
+					<% _.map(JSON.parse(select),function(item,key){ %>
+					<div class="item_wrap clearfix mgtop10">
+						<a class="small_delete fl" tid="<%=key%>"></a>
+						<div class=" width136">
+							<input tid="<%=key %>" class="self_input_c" flag="name" value="<%-item.name %>" />
+							<input tid="<%=key %>" class="self_input_c" flag="className" value=<%-item.className %>/>
+							<input tid="<%=key %>" class="self_input_c" flag="href" value=<%-item.href %> />
+						</div>
+					</div>
+					<% }) %>
+				<% } %>
+				</div>
+			</p>
+		</div>
+		<span class="setting_icon"></span>
+		<!-- <a class="sort_this fr"></a> -->
+	</dd>
+</div>
+
+

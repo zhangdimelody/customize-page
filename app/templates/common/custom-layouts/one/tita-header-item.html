@@ -1,0 +1,32 @@
+<div class="_tt_header"> 
+  <a class="logo" href="/u/102076193/Home#home" title="返回首页"><img src="<%=((uploadinfo)).beisenLogo %>" alt="" style="width: 100px; height: 31.25px; margin-top: 3.875px;" /></a> 
+  <a class="italent_show_app_container" href="javascript:void(0)" onclick="$('.talent_app_selector').slideDown();"><span class="italent_show_app"></span></a> 
+  <span class="brand"> <%-((uploadinfo)).beisenName %> </span> 
+  <ul class="_tt_headnav"> 
+    <div class="userinfo_wrap clearfix fl">
+    <% _.map((userinfo),function(item){ %>
+        <li class="<%-item.className %>"> <a href="javascript:void(0);" title="<%-item.name %>"><%-item.name %></a> </li> 
+    <% }) %>
+    </div>
+     
+     <li class="logout_tthn"> <a href="javascript:void(0);" class="avatar_ltthn">
+      <img src="<%-((uploadinfo)).userLogo %>" alt="<%-((uploadinfo)).userName %>" width="30" height="30" /> </a> <a href="javascript:void(0);"  onclick="$('.menu_ltthn').show()" class="namewrap_tthn"><span class="name_tthn"><%-((uploadinfo)).userName %></span><b class="caret"></b></a> 
+        <ul class="menu_ltthn"> 
+          <% _.map((usersetting),function(item){ %>
+              <li class="<%-item.className %>">
+                <a href="<%-item.href %>"><%-item.name %></a>
+              </li>
+          <% })%>
+     
+       </ul>
+     </li> 
+ </ul> 
+
+
+<div id="indicater_tri" class="indicater_tri indicater2_tri" isopen="0" hasdata="0" style="display: none; position: absolute; zoom: 1; z-index: 1009; left: 1697px; top: 0px;"> 
+ <a href="javascript:void(0)" class="tri"></a> 
+ <div id="indicator_v2" class="indicater indicater2" style="display: none;"> 
+  <ul class="list_indi"></ul> 
+</div>
+</div>
+</div>

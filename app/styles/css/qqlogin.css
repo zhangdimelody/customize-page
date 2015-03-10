@@ -1,0 +1,87 @@
+
+/*  ���ֹ���  */
+.self_preview_wrap {position:relative; zoom:1;}
+.editing_box{ border:5px dotted #cdcdcd; position:absolute;}
+.edit_01, .edit_02, .edit_03, .edit_04, .edit_05, .edit_06, .edit_07, .edit_08, .edit_09{}
+.login_box_msg{ color:red;}
+.self_tips{ padding-top:10px;}
+.tips{left:45.5%;background-color:#68AF02;color:#fff;text-align:center;position:fixed;_position:absolute;z-index: 10000;-moz-border-radius:3px;border-radius:3px;-webkit-border-radius:3px;}
+.top_pos{top:18px;padding:5px 20px 6px;line-height:1em;font-size:12px!important;}
+.tips_center{top:40%;opacity:0.8;filter:alpha(opacity=80);line-height:22px;padding:10px 25px;-moz-box-shadow:2px 2px 2px #ccc;-webkit-box-shadow:2px 2px 2px #ccc;box-shadow:2px 2px 2px #ccc;}
+.b_size {font-size:14px;}
+.self_veri_img{ margin:0;}
+.login_submit{ overflow:hidden; _zoom:1;}
+.login_submit .submit_btn{ float:left;}
+.admin_login_link{ display:inline-block; float:right; margin:9px 0; height:16px; line-height:16px;}
+.login_submit .self_forg{ display:inline-block; float:right; height:16px; line-height:16px; margin:7px 0 7px 8px;}
+#preview_box{ min-height:719px; overflow:hidden;}
+#left{ min-height:720px;}
+.self_dm_login #preview_box{ margin-bottom:0px; padding-bottom:20px;}
+.input_with_domain input{ width:130px;}
+.domain_play{ position:relative;display:inline-block; padding:9px 12px 9px 2px; margin-left:2px; border-left:1px solid #d5deec; width:120px; color:#4d4d4c; font-weight:400; font:12px Verdana,Arial,Helvetica,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;-o-text-overflow:ellipsis;/*cursor:pointer;��ʱ����*/text-align:center;}
+.domain_select{height:10px;width:7px;display:inline-block;background:url(../images/bizmail/custom_login_ico_selector.gif) no-repeat 0px -1px;cursor:pointer;margin-right;4px;position:absolute;right:3px;top:12px;opacity:0.7;filter:alpha(opacity=70);}
+.domain_play:hover .domain_select{opacity:1;filter:alpha(opacity=100);}
+.company_input_wrap{ overflow:hidden; _zoom:1;}
+.company_pic{ cursor:move;}
+.self_preview_01 #company_logo_container .logo_define_position{left:0;}
+.self_preview_02 #company_logo_container .logo_define_position, .self_preview_04 #company_logo_container .logo_define_position{ left:50%; margin-left:-120px;}
+.self_preview_02 .admin_login_link{margin-left:55px;}
+.self_dm_login .company_logo, .self_dm_login .company_pic{ cursor:auto; overflow:hidden;}
+.self_dm_login .company_logo{ height:40px;}
+.self_dm_login .company_logo img, .self_dm_login .company_pic img{}
+.self_dm_login .self_preview_04 .company_pic{ height:240px; margin-bottom:20px;}
+.save_mask{ height:100%; width:100%; position:absolute; top:0; left:0; background:#000; opacity:0.2; filter:alpha(opacity=20); z-index:9999; display:none;}
+.self_ad{ padding:0;}
+#VerifyArea {_overflow:visible;}
+#VerifyArea .self_tips {_bottom:34px;_left:0;}
+#VerifyArea .self_input{ float:none;}
+.domain_select_box{background-color:#fff;position:absolute;top:20px;right:20px;padding:5px 0px;border:1px solid #9DADC5;border-radius:3px;box-shadow:0 0 8px rgba(0,0,0,0.3);text-align:left;}
+.domain_select_box a{display:block;line-height:24px;text-decoration:none;width:100%;text-indent:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+.domain_select_box a:hover{background-color:#EAF3FF;}
+#preview_box .domain_select_box a{color:#4d4d4c;text-decoration:none;}
+.self_preview_01 .domain_select_box{top:81px;right:36px;_right:35px;width:129px;}
+:root .self_preview_01 .domain_select_box{top:82px\9;}
+.self_preview_02 .domain_select_box{top:39px;right:2px;width:137px;}
+.self_preview_03 .domain_select_box{top:70px;right:32px;width:112px;}
+:root .self_preview_03 .domain_select_box{top:72px\9;right:32px;width:112px;}
+.self_preview_04 .domain_select_box{top:42px;left:50%;margin-left:-217px;width:100px;}
+/*  ��һ�ֲ���  */
+.layout_wrap_01{ background:#fff;}
+.self_dm_login .self_preview_01{ height:auto; border-top:0px solid #fff;}
+.self_dm_login .self_preview_01 .self_preview_wrap{ padding-top:40px;}
+.self_preview_01 .self_preview_wrap{ width:750px; margin:0 auto; padding-top:82px;}
+.self_preview_01 .preview_head{ height:40px; overflow:hidden; _zoom:1;}
+.self_preview_01 .company_logo{ display:inline-block; float:left; width:230px; overflow:hidden;}
+.self_preview_01 .preview_head p{ width:508px; padding-right:10px; text-align:right; float:right; height:30px; line-height:30px; margin-top:5px; border-radius:5px;}
+.self_preview_01 .company_main{ overflow:hidden; _zoom:1; padding-top:38px;}
+.self_preview_01 .company_main_wrap{ overflow:hidden; _zoom:1;}
+.self_preview_01 .company_pic{ display:inline-block; _display:inline; float:left; margin:0 0 0 34px; width:330px; height:254px; overflow:hidden;}
+.self_preview_01 .company_logo .define_position{ left:0;}
+.self_preview_01 .company_loginbox{position:relative; width:275px; float:right; padding:28px 35px 11px; border-radius:5px;}
+.self_preview_01 .company_loginbox h3{ font-size:16px; line-height:18px; margin-bottom:18px; color:#313131;}
+.self_preview_01 .company_input_wrap label{ display:none;}
+.self_preview_01 .company_input_wrap{ margin-bottom:12px;}
+.self_preview_01 .company_input_wrap input{ width:262px;background-color:#fff;padding-left:10px;}
+.self_preview_01 .input_with_domain input{ width:130px;}
+.self_preview_01 .domain_play{width:112px;}
+.self_preview_01 .login_type{ overflow:hidden; _zoom:1; width:275px; height:16px; position:relative;}
+.self_preview_01 .login_type input{ vertical-align:top;  *position:relative; *top:-3px;}
+.self_preview_01 .login_type a{ position:absolute; right:0;}
+.self_preview_01 .login_submit{ padding-top:5px; height:34px\9;}
+.self_preview_01 .company_bottom{ margin-top:48px; text-align:center;}
+.self_preview_01 .company_link{ border-radius:5px; height:14px; line-height:14px; padding:7px 0; text-align:center; color:#34599e;}
+.self_preview_01 .company_link a{ margin:0 10px;}
+.self_preview_01 .company_copyright{ padding:8px 0;}
+.self_preview_01 .login_box_msg{ margin:-5px 0 8px;}
+.self_preview_01 .admin_login_link_wrap{ padding-top:14px;}
+.self_preview_01 .admin_login_link{ float:none;}
+.self_preview_01 .input_with_domain{ width:272px;}
+.self_preview_01 .edit_01{ top:77px; left:-5px; width:230px; height:40px;}
+.self_preview_01 .edit_02{ top:155px; left:29px; width:330px; height:254px;}
+.self_preview_01 .edit_03{ top:449px; left:-18px; width:778px; height:43px;}
+.self_preview_01 .edit_04, .self_preview_01 .edit_07, .self_preview_01 .edit_09{ top:75px; left:210px; width:550px; height:43px;}
+.self_preview_01 .edit_05{ top:132px; left:372px; width:400px; height:285px;}
+.self_preview_01 .edit_06{ top:448px; left:-18px; width:777px; height:43px;}
+.self_preview_01 .edit_08{ top:490px; left:0px; width:740px; height:22px;}
+
+/*  �ڶ��ֲ���  */

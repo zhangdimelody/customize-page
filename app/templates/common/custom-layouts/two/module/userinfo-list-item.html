@@ -1,0 +1,13 @@
+<div class="list_gnb_text currentProduct clearfix" id="currentProduct">
+	<a href="javascript:;" hoverid="<%=id %>" class=<% if(select!=""){ %><%-"ico_arr" %><% } %>><span><%-name%></span></a>
+</div>
+<% if(select!=""){ %>
+	<div class="selectlist productList" hoverid="<%=id %>">
+		<ul class="sel_wrap clearfix">
+			<% _.each(JSON.parse(select),function(one){ %>
+			<li class="<%-one.className %>"><a href="<%-one.href %>"><span><%-one.name %></span></a></li>
+			<% }) %>
+		</ul>
+	</div>
+<% } %>
+	

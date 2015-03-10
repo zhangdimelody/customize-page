@@ -1,0 +1,59 @@
+
+
+
+    <dl class="block_wrap">
+        <dt><span class="home_icon upload_icon"></span>上传图片<span class="arrow_down"></span></dt>
+        
+<form action="/uploader.php" method="post" enctype="multipart/form-data" target="uploads">
+     <ul class="upload_list">
+      <dd>
+          <!-- <span class="delete_icon"></span> --><span class="folder_icon"></span>企业LOGO
+          <li class="countabled inline_block pos_rel fr" hc="01" mor="showWrapBox">
+             <div class="file_upload">
+               <input type="hidden" name="sid" value="1TK7JYdX3nxI20AU,7" />
+               <input type="hidden" name="action" value="add_img" />
+               <input type="hidden" name="t" value="biz_rf_mgr" />
+               <input type="hidden" name="fileid" value="logo" />
+               <input type="file" name="companypic" />
+              
+             </div>
+             <a class="self_normalbtn right" un="uploadlogo_btn" href="javascript:;">上传</a>
+             <input class="image_input self_input_c company_logo" flag="beisenLogo"  value=<%-beisenLogo %> />
+          </li>
+      </dd>
+      <dd>
+        <!-- <span class="delete_icon"></span> --><span class="folder_icon"></span>公司logo
+        <li class="countabled inline_block fr pos_rel" hc="02" mor="showWrapBox">
+            <!-- <input class="fr pro_btn mgtop10 mgbtm10" type="submit" /> -->
+           <div class="file_upload">
+            <!-- <form un="uploadLeftImg" action="/cgi-bin/bizmail_ui" method="post" target="actionFrame" enctype="multipart/form-data"> -->
+             <input type="hidden" name="callback" value="callback" /> 
+             <input type="hidden" name="sid" value="1TK7JYdX3nxI20AU,7" />
+             <input type="hidden" name="action" value="add_img" />
+             <input type="hidden" name="t" value="biz_rf_mgr" />
+             <input type="hidden" name="fileid" value="bg" />
+             <input type="file" name="userpic" />
+            <!-- </form> -->
+        
+           </div>
+            <a class="self_normalbtn right" un="uploadbg_btn" href="javascript:;">上传</a>
+           <input class="image_input self_input_c user_logo" flag="userLogo" value="<%-userLogo %>"/>
+        </li>
+      </dd>
+        <!-- <input type="text" class=""/> -->
+        <dd><span class="folder_icon"></span><input type="submit" class="sub_btn"/></dd>
+        <dd>
+          <!-- <span class="delete_icon"></span> --><span class="folder_icon"></span><input class="self_input_c image_input " flag="beisenName" value=<%-beisenName %> />
+        </dd>
+        <dd class="folder_end">
+          <!-- <span class="delete_icon"></span> --><span class="folder_icon"></span><input class="self_input_c image_input " flag="userName" value=<%-userName %> />
+        </dd>
+     </ul>
+</form>
+     
+    <iframe src="javascript:void(0)" frameborder="0" name="uploads" height="0">
+    </iframe>
+    <!-- </div> -->
+    </dl>
+
+    <div class="upload_file"></div>

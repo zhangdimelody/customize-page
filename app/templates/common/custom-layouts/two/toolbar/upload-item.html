@@ -1,0 +1,41 @@
+    <dl class="block_wrap">
+        <dt><span class="home_icon upload_icon"></span>上传图片<span class="arrow_down"></span></dt>
+
+        
+        
+<form action="/FileUpload/Upload" method="post" enctype="multipart/form-data" target="uploads">
+     <ul class="upload_list">
+      
+      <dd>
+        <!-- <span class="delete_icon"></span> --><span class="folder_icon"></span>公司logo
+        <li class="countabled inline_block fr pos_rel" hc="02" mor="showWrapBox">
+            <!-- <input class="fr pro_btn mgtop10 mgbtm10" type="submit" /> -->
+           <div class="file_upload">
+            <!-- <form un="uploadLeftImg" action="/cgi-bin/bizmail_ui" method="post" target="actionFrame" enctype="multipart/form-data"> -->
+    		     <input type="hidden" name="domain" value="www.beisencloud.com" />
+              <input type="hidden" name="callback" value="parent.callback" />
+              <input type="hidden" name="size" value="5000" />
+              <input type="hidden" name="keyspace" value="BeisenCloudSystemFile" />
+              <input type="hidden" name="policy" value="ProtectedNoCaptcha" />
+              <input type="hidden" name="appName" value="beisencloud" />
+
+             <input type="file" name="userpic" />
+            <!-- </form> -->
+        
+           </div>
+            <a class="self_normalbtn right" un="uploadbg_btn" href="javascript:;">上传</a>
+           <input class="image_input self_input_c user_logo" flag="companyLogo"  value="<%- companyLogo %>" style="display:none;"/>
+        </li>
+      </dd>
+        <!-- <input type="text" class=""/> -->
+      <dd class="folder_end"><span class="folder_icon"></span><input type="submit" value="提交" class="sub_btn"/>
+      </dd>
+     </ul>
+</form>
+     
+    <iframe src="javascript:void(0)" frameborder="0" name="uploads" height="0">
+    </iframe>
+    <!-- </div> -->
+    </dl>
+
+    <div class="upload_file"></div>

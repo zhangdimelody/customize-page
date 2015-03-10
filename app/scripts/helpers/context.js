@@ -29,6 +29,10 @@ define(['talent'], function(Talent) {
 			var staticServer = BSGlobal.staticPath;
 			return staticServer + "/" + url;
 		},
+		getJscolorImageUrl: function() {
+			var staticServer = BSGlobal.staticPath;
+			return staticServer + "/images/";
+		},
 		getLoading: function(){
 			var url = this.getStaticUrl('images/load_m.gif');
 			var html = [
