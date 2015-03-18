@@ -3,12 +3,19 @@ define(['talent'
 ],function(Talent
 	,jst
 ) {
-	
+	var ItemView = Talent.ItemView.extend({
+		template : _.template('<a href="javascript:;" class="<%-className %>"> <strong></strong> <span><%-name %></span> </a>')
+		,tagName : 'li'
+		,initialize:function(){
+			
+		}
+	});
 	return Talent.CompositeView.extend({
-		initialize: function(options) {
-			this.template = options.template;
+		template : jst['common/custom-layouts/one/module/leftnav-list']
+		,initialize: function(options) {
 			this.collection = new Talent.Collection(options.data[options.dataType]);
 		}
+		,itemView : ItemView
 		,itemViewContainer : ".nav_wrap"
 		,ui:{
 			"icoArr" : "a.ico_arr"
@@ -28,6 +35,9 @@ define(['talent'
 		,onShow: function() {
 		}
 		,onClose:function(){
+		}
+		,highlightUI:function(borderData){
+			this.$el.find("ul._tt_sidenav")[borderData.flag+'Class']("show_border");
 		}
 	});
 });

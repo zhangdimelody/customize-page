@@ -1,16 +1,16 @@
 define(['talent'
 	,'templates/common'
-	,'views/common/custom-layouts/common/base-layout'
+	// ,'views/common/custom-layouts/common/base-layout'
 	,'models/one-model'
 	,'models/data-nested-model'
 	,'collections/data-nested-collection'
 	,'views/common/custom-layouts/one/tita-header-item-view'
-	,'views/common/custom-layouts/common/module/nav-item-view'
-	,'views/common/custom-layouts/one/module/leftnav-list-item-view'
-	,'views/common/custom-layouts/one/module/hidenav-list-item-view'
+	// ,'views/common/custom-layouts/common/module/nav-item-view'
+	// ,'views/common/custom-layouts/one/module/leftnav-list-item-view'
+	// ,'views/common/custom-layouts/one/module/hidenav-list-item-view'
 ],function(Talent
 	,jst
-	,BaseLayout
+	// ,BaseLayout
 	,OneModel
 	,DataNestedModel
 	,DataNestedCollection
@@ -19,7 +19,7 @@ define(['talent'
 	,LeftNavItemView
 	,HideNavItemView
 ) {
-	return BaseLayout.extend({
+	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/one/layout-item']
 		,initialize: function(data) {
 			var self = this;

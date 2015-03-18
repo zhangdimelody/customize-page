@@ -1,6 +1,6 @@
 define(['talent'
 	,'templates/common'
-	,'views/common/custom-layouts/common/base-layout'
+	// ,'views/common/custom-layouts/common/base-layout'
 	,'models/two-model'
 	,'models/data-nested-model'
 	,'collections/data-nested-collection'
@@ -10,7 +10,7 @@ define(['talent'
 	,'views/common/custom-layouts/two/module/userinfo-list-item-view'
 ],function(Talent
 	,jst
-	,BaseLayout
+	// ,BaseLayout
 	,TwoModel
 	,DataNestedModel
 	,DataNestedCollection
@@ -19,7 +19,7 @@ define(['talent'
 	,NavItemView
 	,UserinfoItemView
 ) {
-	return BaseLayout.extend({
+	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/two/layout-item']
 		,initialize: function(options) {
 			var self = this;

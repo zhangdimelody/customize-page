@@ -1,11 +1,9 @@
 define('StyleItem',['talent'
 	,'templates/common'
-	,'views/common/custom-layouts/common/base-layout'
 	,'jscolor'
 	,'helpers/context'
 ],function(Talent
 	,jst
-	,BaseLayout
 	,jscolor
 	,Context
 ) {

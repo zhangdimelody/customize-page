@@ -205,7 +205,7 @@ define(['talent'
 		,triggerHoverEvent:function(node, flag){
 			var data = {
 						"flag" : flag
-						,"classname" : $(node).attr('name')+'_hover'
+						,"triggerName" : $(node).attr('name')
 					}
 			this.trigger('hover', data);
 		}

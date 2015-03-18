@@ -113,20 +113,32 @@ define(['talent'
 				// ,showView : ['views/common/tita-header-view','']
 				,contentViews : [
 					{
-						name:"titaHeaderView"
-						,path: 'views/common/custom-layouts/one/module/leftnav-list-item-view'
+						name:"titaHeader"
+						,path: 'views/common/custom-layouts/one/tita-header-item-view'
 						,options:{
 						}
 					}
 					,{
-						name:"titaHideNavView"
-						,path: 'views/common/custom-layouts/one/module/hidenav-list-item-view'
+						name:"titaLeft"
+						,path: 'views/common/custom-layouts/one/module/leftnav-list-view'
 						,options:{
+							dataType : "nav"
+						}
+					}
+					,{
+						name:"titaHideList"
+						,path: 'views/common/custom-layouts/one/module/hidenav-list-view'
+						,options:{
+							dataType : "secondaryNav"
 						}
 					}
 				]
 				,relationMap: {
-					
+					"nav_color" : "titaLeft"
+					,"nav" : "titaLeft"
+					,"tenantInfo" : "titaHeader"
+					,"secondaryNav" : "titaHideList"
+					,"userSetting" : "titaHeader"
 				}
 			};
 			this.showLayoutView = new ShowLayoutView(resp);

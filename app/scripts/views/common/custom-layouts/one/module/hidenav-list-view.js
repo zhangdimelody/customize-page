@@ -3,12 +3,19 @@ define(['talent'
 ],function(Talent
 	,jst
 ) {
-	
+	var ItemView = Talent.ItemView.extend({
+		template : _.template('<a id="<%=id %>" class="<%-className %>"  <span><%-name %></span> </a>')
+		,tagName : 'li'
+		,initialize:function(){
+
+		}
+	});
 	return Talent.CompositeView.extend({
-		initialize: function(options) {
-			this.template = options.template;
+		template : jst['common/custom-layouts/one/module/hidenav-list']
+		,initialize: function(options) {
 			this.collection = new Talent.Collection(options.data[options.dataType]);
 		}
+		,itemView : ItemView
 		,itemViewContainer : ".nav_wrap"
 		,ui:{
 			"icoArr" : "a.ico_arr"
@@ -28,6 +35,14 @@ define(['talent'
 		,onShow: function() {
 		}
 		,onClose:function(){
+		}
+		,highlightUI:function(borderData){
+			this.$el.find(".talent_app_selector")[borderData.flag+'Class']("show_border");
+			if(borderData.flag=="add"){
+				this.$el.find(".talent_app_selector").slideDown();
+			}else{
+				this.$el.find("a.closed").click();
+			}
 		}
 	});
 });

@@ -1,11 +1,13 @@
 define(['talent'
 	,'templates/common'
 	,'views/common/custom-layouts/common/sidebar-view'
+	,'views/common/custom-layouts/common/layout-view'
 	// ,'models/preview-model'
 	// ,'models/customization-page-model'
 ],function(Talent
 	,jst
 	,SidebarView
+	,LayoutView
 	// ,PreviewModel
 	// ,CustomizationPageModel
 ) {
@@ -16,6 +18,8 @@ define(['talent'
 			
 			this.type = data.type;
 			this.initData = data.initData;
+
+			this.layoutView = new LayoutView(data);
 
 			window.onresize = function (){
 				self.setRightWidth();
@@ -81,53 +85,21 @@ define(['talent'
 		}
 		,onShow:function(){
 			var self = this;
-			// var obj = this.options.queryObject;
-
-
+		
+			var current = _.findWhere(this.previewList ,{"className" : this.type});
+			var name = current.type;
+			require(['views/common/custom-layouts/'+name+'/sidebar-regions-options']
+				,function(SidebarRegionsOptions){
 			
-			// this.allData.url = "app/get/alldata";
-			// this.allData.fetch().done(function(resp){
-				
-
-				var current = _.findWhere(this.previewList ,{"className" : this.type});
-				var name = current.type;
-				require(['views/common/custom-layouts/'+name+'/layout-view'
-					,'views/common/custom-layouts/'+name+'/sidebar-regions-options']
-					,function(LayoutView,SidebarRegionsOptions){
-					
-					// switch(name){
-					// 	case '1':
-					// 	//不走这个逻辑
-					// 		self.pageModel.getCustomizationData().done(function(backData){
-					// 			console.log('获取租户定制数据成功：',backData);
-					// 			var data = {};
-					// 			data.nav = JSON.parse(JSON.stringify(backData.menu).replace(/text/g,"name"));
-					// 			data.userinfo = resp[name].userinfo;
-								
-					// 			if(_.isEmpty(backData.preference)){
-					// 				data.style = resp[name].style;
-					// 				data.upload = resp[name].upload;
-					// 			}else{
-					// 				data.style = _.defaults(backData.preference.style, resp[name].style);
-					// 				data.upload = _.defaults(backData.preference.upload, resp[name].upload);
-					// 			}
-					// 			self.createView(data,LayoutView,SidebarRegionsOptions,name);
-					// 		});
-					// 		break;
-					// 	default:
-						var data = self.initData;
-						self.createView(data,LayoutView,SidebarRegionsOptions,name);
-					// break;
-					// };
-					
-				});	
-			// });
+					var data = self.initData;
+					self.createView(data,SidebarRegionsOptions,name);
+			});
 			
 		}
-		,createView:function(data,LayoutView,SidebarRegionsOptions,name){
-			this.layoutView = new LayoutView({
-												"data" : data
-											});
+		,createView:function(data,SidebarRegionsOptions,name){
+			// this.layoutView = new LayoutView({
+			// 									"data" : data
+			// 								});
 			
 			this.sidebarView = new SidebarView({
 												"sidebarRegionsOptions" : JSON.parse(JSON.stringify(SidebarRegionsOptions))

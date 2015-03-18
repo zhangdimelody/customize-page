@@ -5,7 +5,8 @@ define(['talent'
 ) {
 	return Talent.ItemView.extend({
 		template: jst['common/custom-layouts/one/tita-header-item']
-		,initialize: function() {
+		,initialize: function(options) {
+			this.model = new Talent.Model(options.data);
 			this.listenTo(this.model,"change",this.render);
 		}
 		,ui:{
@@ -21,6 +22,21 @@ define(['talent'
 		,onShow: function() {
 		}
 		,onClose:function(){
+		}
+		,highlightUI:function(borderData){
+			switch(borderData.triggerName){
+				case "tenantInfo":
+					this.$el.find("._tt_header a.logo,._tt_header span.brand,li.logout_tthn")[borderData.flag+'Class']("show_border");
+					break;
+				case "userSetting":
+					this.$el.find("li.logout_tthn a.namewrap_tthn")[borderData.flag+'Class']("show_border");
+					break;
+			}
+			if(borderData.flag=="add"){
+				this.$el.find("li.logout_tthn .namewrap_tthn").click();
+			}else{
+				this.$el.find("ul.menu_ltthn").hide();
+			}
 		}
 	});
 });
