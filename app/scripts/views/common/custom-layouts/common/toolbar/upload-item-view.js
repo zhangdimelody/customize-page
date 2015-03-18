@@ -1,4 +1,4 @@
-define(['talent'
+define('UploadItem',['talent'
 	,'templates/common'
 ],function(Talent
 	,jst
@@ -8,7 +8,6 @@ define(['talent'
 		initialize: function(options) {
 			this.template = jst["common/custom-layouts/"+options.templateType+"/toolbar/upload-item"]
 			window['callback'] = this.callback;
-
 		}
 		,ui:{
 			'inputChange' : 'input.self_input_c'

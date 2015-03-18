@@ -1,4 +1,4 @@
-define(['talent'
+define('PopDialogLayout',['talent'
 	,'templates/common'
 ],function(Talent
 	,jst

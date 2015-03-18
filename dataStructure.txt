@@ -1,0 +1,23 @@
+{
+	sidebarViews:[
+		{
+			name:"color"
+			// ,path:""
+			options:{
+				highlight:{
+					eventName:"nav_color"
+					,targetViews:['titaHeaderView']
+				}
+			}
+			data: []
+		}
+	]
+	,contentViews: [
+		{
+			name:"titaHeaderView"
+			,path: 'views/common/xxxxx-view'
+			,options:{
+			}
+		}
+	]
+}

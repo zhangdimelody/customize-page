@@ -1,4 +1,4 @@
-define(['talent'
+define('StyleItem',['talent'
 	,'templates/common'
 	,'views/common/custom-layouts/common/base-layout'
 	,'jscolor'

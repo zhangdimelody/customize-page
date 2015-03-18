@@ -1,4 +1,4 @@
-define(['talent'
+define('ListItemOne',['talent'
 	,'templates/common'
 ],function(Talent
 	,jst

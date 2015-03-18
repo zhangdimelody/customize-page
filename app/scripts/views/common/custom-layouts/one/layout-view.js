@@ -21,11 +21,12 @@ define(['talent'
 ) {
 	return BaseLayout.extend({
 		template: jst['common/custom-layouts/one/layout-item']
-		,initialize: function() {
+		,initialize: function(data) {
 			var self = this;
 			this.oneModel = new OneModel;
 			this.oneModel.getLayoutData();
-
+			
+			var styleData = _.defaults(data.data.color,styleData);
 			_.each(styleData,function(item){
 				self.addColorStyle(item.className , item.textcolor);
 			});
@@ -51,18 +52,18 @@ define(['talent'
 			this.hoverShowBorderMap = {
 				"nav_color_hover" : {"titaLeftListView":"ul._tt_sidenav"}
 				,"nav_hover" : {"titaLeftListView":"ul._tt_sidenav"}
-				,"upload_hover" : {"titaHeaderView":"._tt_header a.logo,._tt_header span.brand,li.logout_tthn"}
+				,"tenantInfo_hover" : {"titaHeaderView":"._tt_header a.logo,._tt_header span.brand,li.logout_tthn"}
+				,"secondaryNav_hover" :  {"titaHideListView":".talent_app_selector" }
 				,"userinfo_hover" :  {"titaHeaderView":".userinfo_wrap"}
-				,"usersetting_hover" : {"titaHeaderView":"li.logout_tthn a.namewrap_tthn"}
-				,"hidenav_hover" :  {"titaHideListView":".talent_app_selector" }
+				,"userSetting_hover" : {"titaHeaderView":"li.logout_tthn a.namewrap_tthn"}
 			};
 			this.hoverEventMap = {
-				"hidenav_hover" :
+				"secondaryNav_hover" :
 						[
 							{"titaHeaderView":{"span.italent_show_app":"click"}}
 							,{"titaHideListView":{"a.closed":"click"}}
 						]
-				,"usersetting_hover" :
+				,"userSetting_hover" :
 						[
 							{"titaHeaderView":{"li.logout_tthn a.namewrap_tthn":"click"}}
 							,{"titaHeaderView":{"ul.menu_ltthn":"hide"}}

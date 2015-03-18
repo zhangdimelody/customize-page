@@ -71,30 +71,35 @@ define(['talent','mockjax'],function(
 										id : "0"
 										,name : "动态"
 										,className : "home_ttsn"
+										,href : "#active"
 									}
 									,{
 										id : "1"
 										,name : "工作台"
 										,className : "bench_ttsn"
+										,href : "#plat"
 									}
-									],
+						],
 				hidenav : [
 									{
 										id : "500"
 										,name : "职业发展"
 										,className : "app_500"
+										,href : "#plat"
 									}
 									,{
 										id : "400"
 										,name : "绩效管理"
 										,className : "app_400"
+										,href : "#plat"
 									}
 									,{
 										id : "100"
 										,name : "iTalent"
 										,className : "app_100"
+										,href : "#plat"
 									}
-									],
+							],
 				userinfo : [
 									{	
 										id : "1"
@@ -111,7 +116,7 @@ define(['talent','mockjax'],function(
 										,className: "calendar_tthn"
 										,name : "日程"
 									}
-									],
+							],
 				usersetting : [
 									{ 	
 										id : "0"

@@ -9,6 +9,7 @@ define(['talent'
 	
 	,'views/common/custom-layouts/two/sidebar-regions-options'
 	,'views/common/custom-layouts/two/layout-view'
+
 	,'views/common/custom-layouts/common/pop-content-tree-item-view'
 
 ],function(Talent
@@ -27,10 +28,21 @@ define(['talent'
 			this.viewnames = [];
 			this.model = new DataNestedModel();
 			
+			// 把数据融合到options.sidebarRegionsOptions里
 			_.map(options.data,function(value,name){
 				if(_.has(options.sidebarRegionsOptions,name)){
 					var dataType = options.sidebarRegionsOptions[name].initOptions.dataType;
 					options.sidebarRegionsOptions[name].initOptions[dataType.toLowerCase()] = new Talent[dataType](value);
+				}else{
+					var dataType = options.data[name].options.initOptions.dataType;
+					options.data[name].options.initOptions[dataType.toLowerCase()] = new Talent[dataType](options.data[name].data);
+					options.sidebarRegionsOptions[name] = options.data[name].options;
+				}
+			});
+
+			_.map(options.sidebarRegionsOptions,function(val,key){
+				if(!_.has(options.data, key)){
+					delete options.sidebarRegionsOptions[key];
 				}
 			});
 
@@ -107,7 +119,6 @@ define(['talent'
 				// 开始create view
 
 				// 如果有 itemView参数 则引入文件
-				// debugger
 				if(value.initOptions.itemView != undefined){
 					filePath.push(value.initOptions.itemView);
 				}
@@ -119,7 +130,6 @@ define(['talent'
 					value.initOptions.itemView = ItemView;
 					value.initOptions.popContentView = PopContentView;
 					self[key+'View'] = new ViewName(value.initOptions);
-					
 
 					if(key == "customize"){
 						self.listenTo(self.customizeView,'customHtml',function(layoutOptions){

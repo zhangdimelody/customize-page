@@ -1,4 +1,4 @@
-define(['talent'
+define('ListComposite',['talent'
 	,'templates/common'
 	,'jqueryui'
 	,'$.tree'

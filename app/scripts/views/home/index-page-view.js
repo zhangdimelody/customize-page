@@ -1,14 +1,9 @@
 define(['talent'
 	,'templates/home'
-	,'models/preview-model'
-	,'views/common/custom-layouts/common/sidebar-view'
-	,'models/customization-page-model'
-
+	,'views/common/custom-layouts/common/show-layout'
 ],function(Talent
 	,jst
-	,PreviewModel
-	,SidebarView
-	,CustomizationPageModel
+	,ShowLayoutView
 ) {
 	/**
 	 * Inner main view class
@@ -20,129 +15,136 @@ define(['talent'
 	{
 		template: jst['home/index-page']
 		,className: 'home-page-container'
-		,initialize: function(options) {
-			var self = this;
-			
-			window.onresize = function (){
-				self.setRightWidth();
-				self.sidebarView.setHeight();
+		,initialize: function() {
+			var resp = {
+				type : "tita"
+				,initData :  {
+							color : [{
+										id : "1"
+										,name : "导航栏文字颜色"
+										,selector : "ul._tt_sidenav span"
+										,textcolor : "#ccc"
+										,highlightTrigger : "nav_color"
+									}],
+							tenantInfo : {
+											tenantLogo : "http://cache.tita.com/Image/110006/f3cfa837b96d40988862a5a207193986.png"
+											,tenantName : "北森"
+										},
+							nav : [
+												{
+													id : "0"
+													,name : "动态"
+													,className : "home_ttsn"
+													,href : "#active"
+													,backgroudImage : ""
+												}
+												,{
+													id : "1"
+													,name : "工作台"
+													,className : "bench_ttsn"
+													,href : "#plat"
+													,backgroudImage : ""
+												}
+									],
+							secondaryNav : [
+												{
+													id : "500"
+													,name : "职业发展"
+													,className : "app_500"
+													,href : "#plat"
+													,backgroudImage : ""
+												}
+												,{
+													id : "400"
+													,name : "绩效管理"
+													,className : "app_400"
+													,href : "#plat"
+													,backgroudImage : ""
+												}
+												,{
+													id : "100"
+													,name : "iTalent"
+													,className : "app_100"
+													,href : "#plat"
+													,backgroudImage : ""
+												}
+										]
+							// 新增模块
+							,userSetting : {
+									options : {
+												path:"ListComposite"
+												,initOptions:{
+															itemView:'ListItemOne'
+															,title:"右侧用户设置"
+															,dataType : "Collection"
+															,popContentView : "PopContentTreeItem"
+															// ,collection:new Talent.Collection(userSettingList)
+														}
+												,events:{
+															 "collection" :	"change remove reset add"
+														}
+											}
+									,data: [
+										{ 	
+											id : "0"
+											,name : "个人主页"
+											,className : "profile_ltthn"
+											,href : "#italent/home?appid=1&amp;apptype=1&amp;name=TalentProfile-record"
+										}
+										,{
+											id : "1"
+											,name : "退出登录"
+											,className : ""
+											,href : "/Account/Logout"
+										}
+									]
+									,hoverShowBorder : {
+										"userSetting_hover" : {"titaHeaderView":"li.logout_tthn a.namewrap_tthn"}
+									}
+									,hoverEvent : {
+										"userSetting_hover" :
+										[
+											{"titaHeaderView":{"li.logout_tthn a.namewrap_tthn":"click"}}
+											,{"titaHeaderView":{"ul.menu_ltthn":"hide"}}
+										]
+									}
+							}
+						}
+				// ,showView : ['views/common/tita-header-view','']
+				,contentViews : [
+					{
+						name:"titaHeaderView"
+						,path: 'views/common/custom-layouts/one/module/leftnav-list-item-view'
+						,options:{
+						}
+					}
+					,{
+						name:"titaHideNavView"
+						,path: 'views/common/custom-layouts/one/module/hidenav-list-item-view'
+						,options:{
+						}
+					}
+				]
+				,relationMap: {
+					
+				}
 			};
-
-			this.pageModel = new CustomizationPageModel({
-				productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
-			});
-			// this.allData = $.ajax({
-			// 	type: "get",
-		 //        url: "app/get/alldata",  //请求的接口
-			// });
-			this.allData = new Talent.Model();
+			this.showLayoutView = new ShowLayoutView(resp);
 		}
 		,regions: {
-			leftRegion: '.left_region'
-			,rightRegion: '.right_region'
+			showRegion: '.show_region'
 		}
 		,ui:{
-			'previewArrow': '.right_wrap .arrow'
 		}
 		,events:function(){
 			var events = {};
-			events['click ' + this.ui.previewArrow] = 'clickPreviewArrow';
+			// events['click ' + this.ui.previewArrow] = 'clickPreviewArrow';
 			return events;
 		}
 		,onRender: function() {
 		}
-		,clickPreviewArrow:function(){
-			this.ui.previewArrow.removeClass("preview_down preview_up");			
-			var operateNode = this.$el.find(".right_wrap");
-			if(operateNode.hasClass("right_wrap_hide")){
-				this.ui.previewArrow.addClass("preview_up");
-				operateNode.removeClass("right_wrap_hide");
-				this.$el.find(".right_wrap").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
-				this.setRightWidth();
-			}else{
-				this.ui.previewArrow.addClass("preview_down");
-				operateNode.addClass("right_wrap_hide");
-				this.$el.find(".right_wrap").css({'width':"100%" });
-			}
-		}
 		,onShow:function(){
-			var self = this;
-			var obj = this.options.queryObject;
-
-
-			
-			this.allData.url = "app/get/alldata";
-			this.allData.fetch().done(function(resp){
-				
-
-				var current = _.findWhere(resp.previewList ,{"className" : obj.type});
-				var name = current.type;
-				require(['views/common/custom-layouts/'+name+'/layout-view'
-					,'views/common/custom-layouts/'+name+'/sidebar-regions-options']
-					,function(LayoutView,SidebarRegionsOptions){
-					
-					switch(name){
-						case 'two':
-
-							self.pageModel.getCustomizationData().done(function(backData){
-								console.log('获取租户定制数据成功：',backData);
-								var data = {};
-								data.nav = JSON.parse(JSON.stringify(backData.menu).replace(/text/g,"name"));
-								data.userinfo = resp[name].userinfo;
-								
-								if(_.isEmpty(backData.preference)){
-									data.style = resp[name].style;
-									data.upload = resp[name].upload;
-								}else{
-									data.style = _.defaults(backData.preference.style, resp[name].style);
-									data.upload = _.defaults(backData.preference.upload, resp[name].upload);
-								}
-								self.createView(data,LayoutView,SidebarRegionsOptions,name);
-							});
-							break;
-						default:
-							var data = resp[name];
-							self.createView(data,LayoutView,SidebarRegionsOptions,name);
-							break;
-					};
-					
-				});	
-			});
-			
-		}
-		,createView:function(data,LayoutView,SidebarRegionsOptions,name){
-			this.layoutView = new LayoutView({
-												"data" : data
-											});
-			
-			this.sidebarView = new SidebarView({
-												"sidebarRegionsOptions" : JSON.parse(JSON.stringify(SidebarRegionsOptions))
-												,"data" : data
-											});
-			var sidebarModel = this.sidebarView.model;
-			
-			this.listenTo(sidebarModel, 'change', function(){
-				this.layoutView.update(sidebarModel.toJSON());
-			});
-
-			this.listenTo(this.sidebarView,'hover',function(data){
-				if("highlightUI" in this.layoutView){
-					this.layoutView.highlightUI(data);
-				}
-			});
-			this.listenTo(this.sidebarView,'customHtml',function(layoutOptions){
-				this.layoutView.showCustomize(layoutOptions);
-			});
-
-			this.setRightWidth();
-
-			this.rightRegion.show(this.layoutView);
-			this.leftRegion.show(this.sidebarView);
-			
-			this.sidebarView.$el.find("span.save_set_info").attr("type",name);
-		}
-		,setRightWidth:function(){
-			this.$el.find(".right_region").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
+			this.showRegion.show(this.showLayoutView);
 		}
 		,onClose:function(){
 		}

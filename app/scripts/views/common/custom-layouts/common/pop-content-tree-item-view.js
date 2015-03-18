@@ -1,4 +1,4 @@
-define(['talent'
+define('PopContentTreeItem',['talent'
 	,'templates/common'
 	,'models/customization-page-model'
 ],function(Talent

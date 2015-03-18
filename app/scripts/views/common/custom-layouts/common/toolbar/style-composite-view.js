@@ -1,4 +1,4 @@
-define(['talent'
+define('StyleComposite',['talent'
 	,'templates/common'
 	,'views/common/custom-layouts/common/base-layout'
 	,'jscolor'
