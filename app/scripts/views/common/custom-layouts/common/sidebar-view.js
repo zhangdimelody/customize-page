@@ -145,12 +145,10 @@ define(['talent'
 						listenTarget = listenTarget[target];
 						self.listenTo(listenTarget , name ,function(data){
 							// 将sidebar自己的 model 重新 set 相应值
-							self.model.set(key,this[key+'View'][target]);
+							self.model.set(key,this[key+'View'][target].toJSON());
 						});
 					});
 				});
-
-
 				
 				// 结束create view
 			});
