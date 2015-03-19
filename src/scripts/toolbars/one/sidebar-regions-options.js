@@ -1,9 +1,9 @@
-	// @include scripts/toolbars/one/nav-list-item-view.js
-	// @include scripts/toolbars/one/userinfo-list-item-view.js
-	// @include scripts/toolbars/list-composite-view.js
-	// @include scripts/toolbars/style-color-item-view.js
-	// @include scripts/toolbars/style-composite-view.js
-	// @include scripts/toolbars/upload-item-view.js
+	// @include nav-list-item-view.js
+	// @include userinfo-list-item-view.js
+	// @include ../list-composite-view.js
+	// @include ../style-color-item-view.js
+	// @include ../style-composite-view.js
+	// @include ../upload-item-view.js
 
 return {
 				"color": {

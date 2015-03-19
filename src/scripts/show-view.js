@@ -1,7 +1,8 @@
 	
-	// @include scripts/sidebar-view.js
-	// @include scripts/layout-view.js
-	
+	// @include common.js
+	// @include sidebar-view.js
+	// @include layout-view.js
+
 	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/show-layout']
 		,initialize: function(data) {

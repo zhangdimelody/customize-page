@@ -1,9 +1,9 @@
-	// @include scripts/toolbars/one/sidebar-regions-options.js
-	// @include scripts/toolbars/pop-content-tree-item-view.js
-	// @include scripts/toolbars/popdialog-layout.js
+	// @include toolbars/one/sidebar-regions-options.js
+	// @include toolbars/pop-content-tree-item-view.js
+	// @include toolbars/popdialog-layout.js
 	
 
-	
+
 
 
 var SidebarView = Talent.Layout.extend({

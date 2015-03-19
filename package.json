@@ -17,6 +17,7 @@
 		"grunt-contrib-connect": "0.8.0",
 		"grunt-cssjoin": "0.2.0",
 		"grunt-concurrent": "0.5.0",
+		"grunt-preprocess" : "~3.0.1",
 		"load-grunt-tasks" : "0.5.0"
 	}
 }
