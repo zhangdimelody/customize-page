@@ -1,6 +1,6 @@
 define(['talent'
 	,'templates/home'
-	,'customizePage'
+	,'views/common/custom-layouts/common/show-layout'
 ],function(Talent
 	,jst
 	,ShowLayoutView

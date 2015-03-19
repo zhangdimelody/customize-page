@@ -1,4 +1,4 @@
-define(['talent'
+define('SidebarView',['talent'
 	,'templates/common'
 	// ,'models/data-nested-model'
 	,'helpers/context'

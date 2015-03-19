@@ -1,15 +1,13 @@
 define(['talent'
 	,'templates/common'
-	,'views/common/custom-layouts/common/sidebar-view'
+	,'SidebarView'
 	,'views/common/custom-layouts/common/layout-view'
 	// ,'models/preview-model'
-	,'models/customization-page-model'
 ],function(Talent
 	,jst
 	,SidebarView
 	,LayoutView
 	// ,PreviewModel
-	,CustomizationPageModel
 ) {
 	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/show-layout']
@@ -49,11 +47,6 @@ define(['talent'
 							"selected": ""
 						}
 					];
-			// this.pageModel = new CustomizationPageModel({
-			// 	productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
-			// });
-			
-			// this.allData = new Talent.Model();
 		}
 		,regions: {
 			leftRegion: '.left_region'
