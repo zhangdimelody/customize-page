@@ -7,14 +7,14 @@ define('PopContentTreeItem',['talent'
 ) {
 	return Talent.ItemView.extend({
 			template : _.template('<ul id="popOrg" class="ztree"></ul>')
-			,initialize:function(){
-				
+			,initialize:function(options){
 				// 这是tree的setting
 				this.setting = {
 					data: {
 						key: {
-							name: "text",
-							children:"functions",
+							id: "ID",
+							name: "Text",
+							children:"Functions",
 							url:"javascript:;" //先置为不存在的属性
 						},
 						simpleData: {
@@ -22,16 +22,16 @@ define('PopContentTreeItem',['talent'
 						}
 					}
 				};
-
+				this.url = options.url;
 			}
 			,onSubmit:function(){ 
 				var checkedNode = $.fn.zTree.getZTreeObj("popOrg").getSelectedNodes();
 				var selectedNode = {
-								"id" : checkedNode[0].id
-								,"name" : checkedNode[0].text
-								,"category": checkedNode[0].category
-								,"type" : checkedNode[0].type
-								,"url" : checkedNode[0].url
+								"id" : checkedNode[0].ID
+								,"name" : checkedNode[0].Text
+								,"category": checkedNode[0].Category
+								,"type" : checkedNode[0].Type
+								,"url" : checkedNode[0].Url
 								,"className" : "plan_ttsn"
 							};
 				this.trigger("selected",selectedNode);
@@ -43,12 +43,14 @@ define('PopContentTreeItem',['talent'
 			}
 			,onShow:function(){
 				var self = this;
-				var pageModel = new CustomizationPageModel({
-					productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
-				});
-				pageModel.getFunctionsData().done(function(resp){
-					// console.log('获取租户可选功能列表成功：', resp);
-					$.fn.zTree.init(self.$el.find("#popOrg"), self.setting, resp);
+				// var pageModel = new CustomizationPageModel({
+				// 	productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
+				// });
+				var getTreeModel = new Talent.Model();
+				getTreeModel.url = this.url;
+				getTreeModel.fetch().done(function(resp){
+					console.log(resp);
+					$.fn.zTree.init(self.$el.find("#popOrg"), self.setting, resp.funMenu);
 				})
 			}
 	});

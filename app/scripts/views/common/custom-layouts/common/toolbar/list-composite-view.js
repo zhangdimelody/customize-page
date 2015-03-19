@@ -14,7 +14,7 @@ define('ListComposite',['talent'
 			this.showAddBtn = false;
 			if(options.popContentView){
 				this.showAddBtn = true;
-				this.popContentTreeView = new options.popContentView;
+				this.popContentTreeView = new options.popContentView({"url" : options.popTreeUrl});
 				this.listenTo(this.popContentTreeView,'selected',function(selectedNode){
 					this.$el.find(".nav_list :last-child dd").removeClass("folder_end");
 					this.collection.add(new Talent.Model(selectedNode));

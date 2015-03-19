@@ -13,7 +13,7 @@ define(['talent'
 	return Talent.CompositeView.extend({
 		template : jst['common/custom-layouts/one/module/hidenav-list']
 		,initialize: function(options) {
-			this.collection = new Talent.Collection(options.data[options.dataType]);
+			this.collection = new Talent.Collection(options.data.secondaryNav);
 		}
 		,itemView : ItemView
 		,itemViewContainer : ".nav_wrap"
@@ -43,6 +43,9 @@ define(['talent'
 			}else{
 				this.$el.find("a.closed").click();
 			}
+		}
+		,update:function(newData){
+			this.collection.reset(newData.secondaryNav);
 		}
 	});
 });

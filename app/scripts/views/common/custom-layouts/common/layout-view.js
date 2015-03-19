@@ -35,7 +35,7 @@ define(['talent'
 				self.viewnames.push(viewName);
 
 				require([item.path],function(View){ 
-					item.options.data = self.data.initData;
+					item.options.data = self.data.commonData;
 					self[viewName+'View'] = new View(item.options);
 					def.resolve();
 				});
@@ -50,15 +50,12 @@ define(['talent'
 			});
 		}
 		,update:function(newData){
-			// var headerinfo =  {
-			// 	"uploadinfo" : newData.upload
-			// 	,"userinfo" : newData.userinfo
-			// 	,"usersetting" : newData.usersetting
+			var self = this;
+			// if(this.viewnames != undefined){
+				_.each(this.viewnames,function(item){
+					self[item+'View'].update(newData);
+				});
 			// }
-			
-			// this.titaHeaderView.model.set(headerinfo);
-			// this.titaLeftListView.collection.reset(newData.nav);
-			// this.titaHideListView.collection.reset(newData.hidenav);
 		}
 		,addColorStyle:function(classname,text){
 			// 添加一条样式，并显示
@@ -89,27 +86,10 @@ define(['talent'
 			borderData.flag = action;
 
 			var viewName = this.data.relationMap[borderData.triggerName] + 'View';
-			this[viewName].highlightUI(borderData);
-			// var obj = this.hoverShowBorderMap[data.classname];
-			// _.each(obj ,function(value,key){
-			// 	self[key].$el.find(value)[action+"Class"]("show_border");
-			// });
-
-			// 比对EventMap，看是否需要动作
-			// _.each(this.hoverEventMap,function(value,key){
-			// 	if(data.classname==key){
-			// 		// 数组中第1个是showBorder 第2个是hideBorder
-			// 		var flag = (data.flag) ? 0 : 1;
-			// 		_.each(value[flag],function(val,ke){
-			// 			_.each(val,function(v,k){
-			// 				// 判断是否需要区分不同的元素 动作,如果有hoverid就加上
-			// 				var element = (_.has(data,"hoverid")) ? (k+"[hoverid="+data.hoverid+"]") : k;
-			// 				self[ke].$el.find(element)[v]();
-			// 			});
-			// 		});
-			// 	}
-			// });
-
+			// 避免relationMap里面没有对应的viewName
+			if(this.data.relationMap[borderData.triggerName] != undefined){
+				this[viewName].highlightUI(borderData);
+			}
 		}
 	});
 });

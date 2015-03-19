@@ -18,7 +18,7 @@ define(['talent'
 		,initialize: function() {
 			var resp = {
 				type : "tita"
-				,initData :  {
+				,commonData :  {
 							color : [{
 										id : "1"
 										,name : "导航栏文字颜色"
@@ -70,47 +70,36 @@ define(['talent'
 												}
 										]
 							// 新增模块
-							,userSetting : {
-									options : {
-												path:"ListComposite"
-												,initOptions:{
-															itemView:'ListItemOne'
-															,title:"右侧用户设置"
-															,dataType : "Collection"
-															,popContentView : "PopContentTreeItem"
-															// ,collection:new Talent.Collection(userSettingList)
-														}
-												,events:{
-															 "collection" :	"change remove reset add"
-														}
-											}
-									,data: [
-										{ 	
-											id : "0"
-											,name : "个人主页"
-											,className : "profile_ltthn"
-											,href : "#italent/home?appid=1&amp;apptype=1&amp;name=TalentProfile-record"
-										}
-										,{
-											id : "1"
-											,name : "退出登录"
-											,className : ""
-											,href : "/Account/Logout"
-										}
-									]
-									,hoverShowBorder : {
-										"userSetting_hover" : {"titaHeaderView":"li.logout_tthn a.namewrap_tthn"}
-									}
-									,hoverEvent : {
-										"userSetting_hover" :
-										[
-											{"titaHeaderView":{"li.logout_tthn a.namewrap_tthn":"click"}}
-											,{"titaHeaderView":{"ul.menu_ltthn":"hide"}}
-										]
-									}
-							}
-						}
-				// ,showView : ['views/common/tita-header-view','']
+							// ,userSetting : {
+							// 		options : {
+							// 					path:"ListComposite"
+							// 					,initOptions:{
+							// 								itemView:'ListItemOne'
+							// 								,title:"右侧用户设置"
+							// 								,dataType : "Collection"
+							// 								,popContentView : "PopContentTreeItem"
+							// 								,popTreeUrl : "/tms/custom/getfunctions"
+							// 							}
+							// 					,events:{
+							// 								 "collection" :	"change remove reset add"
+							// 							}
+							// 				}
+							// 		,data: [
+							// 			{ 	
+							// 				id : "0"
+							// 				,name : "个人主页"
+							// 				,className : "profile_ltthn"
+							// 				,href : "#italent/home?appid=1&amp;apptype=1&amp;name=TalentProfile-record"
+							// 			}
+							// 			,{
+							// 				id : "1"
+							// 				,name : "退出登录"
+							// 				,className : ""
+							// 				,href : "/Account/Logout"
+							// 			}
+							// 		]
+							// }
+				}
 				,contentViews : [
 					{
 						name:"titaHeader"
@@ -133,6 +122,14 @@ define(['talent'
 						}
 					}
 				]
+				,sidebarViews : {
+					nav : {
+						popTreeUrl : "/tms/custom/getfunctions"
+					}
+					,secondaryNav : {
+						popTreeUrl : "/tms/custom/getfunctions"
+					}
+				}
 				,relationMap: {
 					"nav_color" : "titaLeft"
 					,"nav" : "titaLeft"

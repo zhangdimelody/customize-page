@@ -17,8 +17,8 @@ define(['talent'
 			var self = this;
 			
 			this.type = data.type;
-			this.initData = data.initData;
-
+			this.initData = data.commonData;
+			this.sidebarOptions = data.sidebarViews;
 			this.layoutView = new LayoutView(data);
 
 			window.onresize = function (){
@@ -97,10 +97,14 @@ define(['talent'
 			
 		}
 		,createView:function(data,SidebarRegionsOptions,name){
-			// this.layoutView = new LayoutView({
-			// 									"data" : data
-			// 								});
-			
+			// 将用户定义的options和配好的options合并
+			_.map(this.sidebarOptions,function(value,key){
+				_.map(SidebarRegionsOptions,function(one , name){
+					if(key == name){
+						one.initOptions = JSON.parse(JSON.stringify(_.defaults(one.initOptions, value)));
+					}
+				});
+			});
 			this.sidebarView = new SidebarView({
 												"sidebarRegionsOptions" : JSON.parse(JSON.stringify(SidebarRegionsOptions))
 												,"data" : data

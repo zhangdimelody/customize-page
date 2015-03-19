@@ -64,7 +64,7 @@ define(['talent'
 										 "collection" :"change remove reset add"
 									}
 						}
-				,"popdialog":{
+				,"popDialog":{
 								path:"PopDialogLayout"
 								,initOptions:{
 										}

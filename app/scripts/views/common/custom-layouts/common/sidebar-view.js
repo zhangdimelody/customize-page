@@ -41,7 +41,7 @@ define(['talent'
 			});
 
 			_.map(options.sidebarRegionsOptions,function(val,key){
-				if(!_.has(options.data, key)){
+				if((!_.has(options.data, key)&&(key!="popDialog"))){
 					delete options.sidebarRegionsOptions[key];
 				}
 			});
@@ -95,7 +95,7 @@ define(['talent'
 				});
 				_.each(self.viewnames,function(item){
 					self.listenTo(self[item+'View'],'pop',function(obj){
-						self.popdialogView.showContent(obj);
+						self.popDialogView.showContent(obj);
 					});
 				});
 				self.setHeight();
@@ -125,7 +125,7 @@ define(['talent'
 				if(value.initOptions.popContentView != undefined){
 					filePath.push(value.initOptions.popContentView);	
 				}
-				// console.log(filePath)
+				
 				require(filePath,function(ViewName,ItemView,PopContentView){
 					value.initOptions.itemView = ItemView;
 					value.initOptions.popContentView = PopContentView;
@@ -136,9 +136,7 @@ define(['talent'
 							self.trigger("customHtml",layoutOptions);
 						});
 					}
-					// this.model.set()数据
-					var dataType = (_.has(value.initOptions,'collection'))?'collection':'model';
-					self.model.set(key,self[key+'View'][dataType]);
+					
 					
 					def.resolve();
 					// 绑定监听事件
@@ -150,8 +148,10 @@ define(['talent'
 							self.model.set(key,this[key+'View'][target]);
 						});
 					});
-
 				});
+
+
+				
 				// 结束create view
 			});
 		}
@@ -161,6 +161,11 @@ define(['talent'
 				var itemWrap = "<div name="+item+" class='"+item+"_region hover_item'></div>";
 				self.$el.find(".self_defined").append(itemWrap);
 				self[item].show(self[item+'View']);
+			});
+			// this.model.set()数据
+			_.each(this.regionOptions,function(value,key){
+				var dataType = (_.has(value.initOptions,'collection'))?'collection':'model';
+				self.model.set(key,self[key+'View'][dataType]);
 			});
 		}
 		// 保存操作

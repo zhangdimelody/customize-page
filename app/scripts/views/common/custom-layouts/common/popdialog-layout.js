@@ -5,7 +5,7 @@ define('PopDialogLayout',['talent'
 ) {
 	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/popdialog-layout']
-		,initialize: function() {
+		,initialize: function(options) {
 		}
 		,ui:{
 			// 'itemView': '.item_view'

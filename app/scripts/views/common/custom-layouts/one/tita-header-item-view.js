@@ -38,5 +38,8 @@ define(['talent'
 				this.$el.find("ul.menu_ltthn").hide();
 			}
 		}
+		,update:function(newData){
+			this.model.set(newData);
+		}
 	});
 });

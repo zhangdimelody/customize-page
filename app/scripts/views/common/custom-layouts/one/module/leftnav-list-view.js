@@ -13,7 +13,7 @@ define(['talent'
 	return Talent.CompositeView.extend({
 		template : jst['common/custom-layouts/one/module/leftnav-list']
 		,initialize: function(options) {
-			this.collection = new Talent.Collection(options.data[options.dataType]);
+			this.collection = new Talent.Collection(options.data.nav);
 		}
 		,itemView : ItemView
 		,itemViewContainer : ".nav_wrap"
@@ -38,6 +38,9 @@ define(['talent'
 		}
 		,highlightUI:function(borderData){
 			this.$el.find("ul._tt_sidenav")[borderData.flag+'Class']("show_border");
+		}
+		,update:function(newData){
+			this.collection.reset(newData.nav);
 		}
 	});
 });
