@@ -32,7 +32,7 @@ define(['talent'
 					this.$el.find("li.logout_tthn a.namewrap_tthn")[borderData.flag+'Class']("show_border");
 					break;
 			}
-			if(borderData.flag=="add"){
+			if((borderData.flag=="add")&&(borderData.triggerName=="userSetting")){
 				this.$el.find("li.logout_tthn .namewrap_tthn").click();
 			}else{
 				this.$el.find("ul.menu_ltthn").hide();
