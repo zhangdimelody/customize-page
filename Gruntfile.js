@@ -81,6 +81,20 @@ module.exports = function( grunt ) {
 				dest: "app/scripts/templates/common.js"
 			}
 		}
+		,preprocess: {
+			build: {
+				src: [
+					'src/index.js'
+				],
+				dest: 'app/scripts/vendor/components/customizePage/index.js'
+			}
+			,dist: {
+				src: [
+					'src/index.js'
+				],
+				dest: 'index.js'
+			}
+		}
 		,cssjoin: {
 			join :{
 				files: {
@@ -114,20 +128,6 @@ module.exports = function( grunt ) {
 			,rjs: ['requirejs:mainIncludeFiles']	// fix: rjs copy conflict
 			,requirejs: ['requirejs:main']
 			,uglify: ['uglify:main']
-		}
-		,preprocess: {
-			build: {
-				src: [
-					'src/index.js'
-				],
-				dest: 'app/scripts/vendor/components/customizePage/index.js'
-			}
-			,dist: {
-				src: [
-					'src/index.js'
-				],
-				dest: 'index.js'
-			}
 		}
 	};
 
@@ -174,7 +174,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask('js', ['concurrent']);
 	grunt.registerTask('css', ['cssjoin','cssmin']);
 	grunt.registerTask('local', ['jst','watch','preprocess']);
-	grunt.registerTask('server', ['jst','connect','watch']);
+	grunt.registerTask('server', ['jst','connect','preprocess','watch']);
 
 	require('load-grunt-tasks')(grunt);
 

@@ -1,24 +1,12 @@
-define(['talent'
-	,'templates/common'
-	// ,'models/data-nested-model'
-	// ,'helpers/context'
-	// ,'models/customization-page-model'
+	// @include scripts/toolbars/one/sidebar-regions-options.js
+	// @include scripts/toolbars/pop-content-tree-item-view.js
+	// @include scripts/toolbars/popdialog-layout.js
 	
-	,'views/common/custom-layouts/one/sidebar-regions-options'
-	// ,'views/common/custom-layouts/one/layout-view'
-	
-	// ,'views/common/custom-layouts/two/sidebar-regions-options'
-	// ,'views/common/custom-layouts/two/layout-view'
-	,'views/common/custom-layouts/common/popdialog-layout'
-	,'views/common/custom-layouts/common/pop-content-tree-item-view'
 
-],function(Talent
-	,jst
-	// ,DataNestedModel
-	// ,Context
-	// ,CustomizationPageModel
-) {
-	return Talent.Layout.extend({
+	
+
+
+var SidebarView = Talent.Layout.extend({
 		template :  jst['common/custom-layouts/common/sidebar']
 		,initialize: function(options) {
 			var self = this;
@@ -73,7 +61,7 @@ define(['talent'
 			$.when.apply(this, this.defers).done(function() {
 				self.regionShowView();
 
-				jscolor.dir = self.getJscolorImageUrl();
+				jscolor.dir = this.getJscolorImageUrl();
 				jscolor.init();
 				
 				self.$el.on('mouseenter', ".hover_item", function(){
@@ -221,5 +209,4 @@ define(['talent'
 		}
 		,onClose:function(){
 		}
-	});
 });

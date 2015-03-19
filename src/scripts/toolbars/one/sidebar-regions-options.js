@@ -1,20 +1,11 @@
-define(['talent'
-	,'templates/common'
-	// ,'models/one-model'
+	// @include scripts/toolbars/one/nav-list-item-view.js
+	// @include scripts/toolbars/one/userinfo-list-item-view.js
+	// @include scripts/toolbars/list-composite-view.js
+	// @include scripts/toolbars/style-color-item-view.js
+	// @include scripts/toolbars/style-composite-view.js
+	// @include scripts/toolbars/upload-item-view.js
 
-	,'views/common/custom-layouts/common/toolbar/upload-item-view'
-	,'views/common/custom-layouts/common/toolbar/list-composite-view'
-	,'views/common/custom-layouts/common/toolbar/style-composite-view'
-	,'views/common/custom-layouts/common/toolbar/style-color-item-view'
-	,'views/common/custom-layouts/one/toolbar/nav-list-item-view'
-	,'views/common/custom-layouts/one/toolbar/userinfo-list-item-view'
-],function(Talent
-	,jst
-	// ,OneModel
-){
-	// this.oneModel = new OneModel;
-	// this.oneModel.getSidebarData();
-	return {
+return {
 				"color": {
 							path:"StyleComposite"
 							,initOptions:{
@@ -98,4 +89,3 @@ define(['talent'
 				// 						}
 				// 			}
 			}
-})

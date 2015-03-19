@@ -1,6 +1,6 @@
 define(['talent'
 	,'templates/common'
-	,'SidebarView'
+	,'views/common/custom-layouts/common/sidebar-view'
 	,'views/common/custom-layouts/common/layout-view'
 	// ,'models/preview-model'
 ],function(Talent
