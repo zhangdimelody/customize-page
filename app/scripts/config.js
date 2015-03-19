@@ -11,6 +11,7 @@ require.config({
 		,"jscolor" : 'vendor/legacy/jscolor'
     	,'$.tree' : 'vendor/legacy/jquery.ztree.core-3.5'
 		,"mockjax": "vendor/components/jquery.mockjax/index"
+		,"customizePage": "vendor/components/customizePage/index"
 	},
 	shim: {
 		'$': {

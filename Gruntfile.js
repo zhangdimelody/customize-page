@@ -14,6 +14,12 @@ module.exports = function( grunt ) {
 				]
 				,tasks: 'jst'
 			}
+			,preprocess: {
+				files: [
+					'src/scripts/*.js'
+				]
+				,tasks: 'preprocess'
+			}
 		}
 		,requirejs: {
 			options: {
@@ -109,6 +115,20 @@ module.exports = function( grunt ) {
 			,requirejs: ['requirejs:main']
 			,uglify: ['uglify:main']
 		}
+		,preprocess: {
+			build: {
+				src: [
+					'src/index.js'
+				],
+				dest: 'app/scripts/vendor/components/customizePage/index.js'
+			}
+			,dist: {
+				src: [
+					'src/index.js'
+				],
+				dest: 'index.js'
+			}
+		}
 	};
 
 
@@ -153,7 +173,7 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask('js', ['concurrent']);
 	grunt.registerTask('css', ['cssjoin','cssmin']);
-	grunt.registerTask('local', ['jst','watch']);
+	grunt.registerTask('local', ['jst','watch','preprocess']);
 	grunt.registerTask('server', ['jst','connect','watch']);
 
 	require('load-grunt-tasks')(grunt);

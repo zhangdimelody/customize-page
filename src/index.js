@@ -3,13 +3,13 @@ define(['talent'
 	,'views/common/custom-layouts/common/sidebar-view'
 	,'views/common/custom-layouts/common/layout-view'
 	// ,'models/preview-model'
-	,'models/customization-page-model'
+	// ,'models/customization-page-model'
 ],function(Talent
 	,jst
 	,SidebarView
 	,LayoutView
 	// ,PreviewModel
-	,CustomizationPageModel
+	// ,CustomizationPageModel
 ) {
 	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/show-layout']

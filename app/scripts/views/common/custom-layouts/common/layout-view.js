@@ -51,11 +51,9 @@ define(['talent'
 		}
 		,update:function(newData){
 			var self = this;
-			// if(this.viewnames != undefined){
-				_.each(this.viewnames,function(item){
-					self[item+'View'].update(newData);
-				});
-			// }
+			_.each(this.viewnames,function(item){
+				self[item+'View'].update(newData);
+			});
 		}
 		,addColorStyle:function(classname,text){
 			// 添加一条样式，并显示

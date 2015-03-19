@@ -25,6 +25,7 @@ define(['talent'
 										,selector : "ul._tt_sidenav span"
 										,textcolor : "#ccc"
 										,highlightTrigger : "nav_color"
+										,className : "home_ttsn"
 									}],
 							tenantInfo : {
 											tenantLogo : "http://cache.tita.com/Image/110006/f3cfa837b96d40988862a5a207193986.png"
@@ -139,6 +140,10 @@ define(['talent'
 				}
 			};
 			this.showLayoutView = new ShowLayoutView(resp);
+			// 监听保存后的数据
+			this.listenTo(this.showLayoutView,"saveConfigData",function(data){
+				console.log(data);
+			},this);
 		}
 		,regions: {
 			showRegion: '.show_region'

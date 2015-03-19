@@ -1,8 +1,8 @@
 define(['talent'
 	,'templates/common'
-	,'models/data-nested-model'
+	// ,'models/data-nested-model'
 	,'helpers/context'
-	,'models/customization-page-model'
+	// ,'models/customization-page-model'
 	
 	,'views/common/custom-layouts/one/sidebar-regions-options'
 	,'views/common/custom-layouts/one/layout-view'
@@ -14,19 +14,19 @@ define(['talent'
 
 ],function(Talent
 	,jst
-	,DataNestedModel
+	// ,DataNestedModel
 	,Context
-	,CustomizationPageModel
+	// ,CustomizationPageModel
 ) {
 	return Talent.Layout.extend({
 		template :  jst['common/custom-layouts/common/sidebar']
 		,initialize: function(options) {
 			var self = this;
-			this.pageModel = new CustomizationPageModel({
-				productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
-			});
+			// this.pageModel = new CustomizationPageModel({
+			// 	productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
+			// });
 			this.viewnames = [];
-			this.model = new DataNestedModel();
+			this.model = new Talent.Model();
 			
 			// 把数据融合到options.sidebarRegionsOptions里
 			_.map(options.data,function(value,name){
@@ -163,41 +163,44 @@ define(['talent'
 				self[item].show(self[item+'View']);
 			});
 			// this.model.set()数据
+			var data = {};
 			_.each(this.regionOptions,function(value,key){
 				var dataType = (_.has(value.initOptions,'collection'))?'collection':'model';
-				self.model.set(key,self[key+'View'][dataType]);
+				data[key] = self[key+'View'][dataType].toJSON();
 			});
+			self.model.set(data);
 		}
 		// 保存操作
 		,saveSetInfo:function(e){
 			var self = this;
 			var type = $(e.currentTarget).attr("type");
 			var modelData = this.model.toJSON();
+			
+			this.trigger("saveConfigData",modelData);
+			// switch(type){
+			// 	case "two":
+			// 		var data = {};
 					
-			switch(type){
-				case "two":
-					var data = {};
-					
-					var i = 1;
-					_.each(modelData.nav,function(item){
-						item.order = i;
-						i++;
-					});
-					data.menu = JSON.parse(JSON.stringify(modelData.nav).replace(/name/g,"text"));
-					var preference = {};
-					preference.style = modelData.style;
+			// 		var i = 1;
+			// 		_.each(modelData.nav,function(item){
+			// 			item.order = i;
+			// 			i++;
+			// 		});
+			// 		data.menu = JSON.parse(JSON.stringify(modelData.nav).replace(/name/g,"text"));
+			// 		var preference = {};
+			// 		preference.style = modelData.style;
 
-					preference.upload = modelData.upload;
-					data.preference = preference;
-					data.ProductID = "f816d041-1f65-4967-9eb8-2ec3057ebf76";
+			// 		preference.upload = modelData.upload;
+			// 		data.preference = preference;
+			// 		data.ProductID = "f816d041-1f65-4967-9eb8-2ec3057ebf76";
 
-					this.pageModel.setCustomizationData(data).done(function(resp) {
-						console.log('保存租户定制数据成功：',resp);
-					});
-					break;
-				default:
-					break;
-			}
+			// 		this.pageModel.setCustomizationData(data).done(function(resp) {
+			// 			console.log('保存租户定制数据成功：',resp);
+			// 		});
+			// 		break;
+			// 	default:
+			// 		break;
+			// }
 			
 
 			// localStorage.setItem("sidebar"+$(e.currentTarget).attr("type") ,JSON.stringify(this.model));
