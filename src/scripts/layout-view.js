@@ -1,4 +1,5 @@
-var LayoutView = Talent.Layout.extend({
+define('LayoutView',['talent'],function(Talent){
+	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/layout']
 		,initialize:function(data){
 			var self = this;
@@ -84,4 +85,5 @@ var LayoutView = Talent.Layout.extend({
 				this[viewName].highlightUI(borderData);
 			}
 		}
+	});
 });

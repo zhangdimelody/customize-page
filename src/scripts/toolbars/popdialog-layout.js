@@ -1,8 +1,4 @@
-define('PopDialogLayout',['talent'
-	,'templates/common'
-],function(Talent
-	,jst
-) {
+define('PopDialogLayout',['talent'],function(Talent){
 	return Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/popdialog-layout']
 		,initialize: function(options) {

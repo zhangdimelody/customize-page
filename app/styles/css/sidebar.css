@@ -3,20 +3,20 @@
 .sidebar_wrap dl.block_wrap dt,.sidebar_wrap dl.block_wrap dd{  height: 44px; line-height: 44px; margin-top: 2px; }
 .sidebar_wrap dl.block_wrap dt:hover,.sidebar_wrap dl.block_wrap dd:hover{ background-color: #ededed; }
 .sidebar_wrap dt span.home_icon{ margin-left: 20px; display: inline-block; width: 30px; height: 16px;  background-size: 16px 16px; vertical-align: middle; }
-.sidebar_wrap dt span.nav_icon{  background:url(../../images/nav_icon_1.png) no-repeat; background-size: 16px 16px;}
-.sidebar_wrap dt span.color_icon{  background:url(../../images/color_icon.png) no-repeat;background-size: 16px 16px;}
-.sidebar_wrap dt span.upload_icon{  background:url(../../images/upload_icon.png) no-repeat;background-size: 16px 16px;}
-.sidebar_wrap dt span.sort_icon{ cursor: pointer; display: inline-block; width: 30px; height: 16px;  background:url(../../images/sort_icon.png) no-repeat; vertical-align: middle;}
-.sidebar_wrap dl.block_wrap dd span.folder_icon{ margin-left: 60px;display: inline-block;width: 19px;height: 44px;background: url(../../images/folder-child.png) no-repeat;vertical-align: middle; }
-.sidebar_wrap dl.block_wrap dd.folder_end span.folder_icon{ background: url(../../images/folder-child-end.png) no-repeat; }
-.sidebar_wrap dl.block_wrap dt span.arrow_down{ cursor: pointer; float: right; width: 16px; height: 16px; background: url(../../images/chevron-down-dark.png) no-repeat; margin-top: 14px; margin-right: 10px;}
-.sidebar_wrap dl.block_wrap dt span.add_icon{ cursor: pointer; display: inline-block; width: 36px; height: 16px; background: url(../../images/add-dark.png) no-repeat; margin-top: 14px;vertical-align: middle;}
-.sidebar_wrap dl.block_wrap dd:hover span.setting_icon{ cursor: pointer; float: right; width: 50px ; height: 16px ; background: url(../../images/settings.png) no-repeat; margin-top: 14px;}
+.sidebar_wrap dt span.nav_icon{  background:url(../../images/customizePage/nav_icon_1.png) no-repeat; background-size: 16px 16px;}
+.sidebar_wrap dt span.color_icon{  background:url(../../images/customizePage/color_icon.png) no-repeat;background-size: 16px 16px;}
+.sidebar_wrap dt span.upload_icon{  background:url(../../images/customizePage/upload_icon.png) no-repeat;background-size: 16px 16px;}
+.sidebar_wrap dt span.sort_icon{ cursor: pointer; display: inline-block; width: 30px; height: 16px;  background:url(../../images/customizePage/sort_icon.png) no-repeat; vertical-align: middle;}
+.sidebar_wrap dl.block_wrap dd span.folder_icon{ margin-left: 60px;display: inline-block;width: 19px;height: 44px;background: url(../../images/customizePage/folder-child.png) no-repeat;vertical-align: middle; }
+.sidebar_wrap dl.block_wrap dd.folder_end span.folder_icon{ background: url(../../images/customizePage/folder-child-end.png) no-repeat; }
+.sidebar_wrap dl.block_wrap dt span.arrow_down{ cursor: pointer; float: right; width: 16px; height: 16px; background: url(../../images/customizePage/chevron-down-dark.png) no-repeat; margin-top: 14px; margin-right: 10px;}
+.sidebar_wrap dl.block_wrap dt span.add_icon{ cursor: pointer; display: inline-block; width: 36px; height: 16px; background: url(../../images/customizePage/add-dark.png) no-repeat; margin-top: 14px;vertical-align: middle;}
+.sidebar_wrap dl.block_wrap dd:hover span.setting_icon{ cursor: pointer; float: right; width: 50px ; height: 16px ; background: url(../../images/customizePage/settings.png) no-repeat; margin-top: 14px;}
 .sidebar_wrap dl.block_wrap dd input{  height: 24px; line-height: 24px; border: 1px solid transparent; background-color: transparent; }
 .sidebar_wrap dl.block_wrap dd input:hover{ border-color:#ccc; background-color: #fff; }
 .sidebar_wrap dl.block_wrap dd input.sub_btn{ border:0 none; }
 .sidebar_wrap dl.block_wrap dd input.sub_btn:hover{ border:0 none; background-color: transparent;font-weight: bold; }
-.sidebar_wrap dl.block_wrap dd span.delete_icon{  cursor: pointer; display: inline-block; width: 16px; height: 16px; background: url(../../images/trash-dark.png) no-repeat; 
+.sidebar_wrap dl.block_wrap dd span.delete_icon{  cursor: pointer; display: inline-block; width: 16px; height: 16px; background: url(../../images/customizePage/trash-dark.png) no-repeat; 
 position: absolute; left: -17px;   margin-top: 15px;
  transition:left 0.3s;
 -moz-transition:left 0.3s; /* Firefox 4 */
@@ -36,7 +36,7 @@ position: absolute; left: -17px;   margin-top: 15px;
 /* 弹框样式 over */
 h1.title_wrap{ position: relative; background-color: #f2f2f2; height: 26px; line-height: 26px; padding: 10px; /*border-bottom: 1px solid #d0d0d0;*/ }
 h1.title_wrap span{ cursor: pointer; font-size: 14px; }
-h1.title_wrap span.goback_icon{ position: absolute; left: 18px; margin-top: 3px; display: inline-block; width: 30px; height: 16px;  background: url(../../images/back-arrow-dark.png) no-repeat; 
+h1.title_wrap span.goback_icon{ position: absolute; left: 18px; margin-top: 3px; display: inline-block; width: 30px; height: 16px;  background: url(../../images/customizePage/back-arrow-dark.png) no-repeat; 
  transition:left 0.3s;
 -moz-transition:left 0.3s; /* Firefox 4 */
 -webkit-transition:left 0.3s; /* Safari and Chrome */

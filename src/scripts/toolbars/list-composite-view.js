@@ -1,17 +1,10 @@
-define('ListComposite',['talent'
-	,'templates/common'
-	,'jqueryui'
-	,'$.tree'
-],function(Talent
-	,jst
-	,jqueryui
-) {
-	
+define('ListComposite',['talent'],function(Talent){
+
 	return Talent.CompositeView.extend({
 		template: jst['common/custom-layouts/common/toolbar/list-composite']
 		,itemViewContainer : ".nav_list"
 		,initialize: function(options) {
-			this.showAddBtn = false;
+			this.showAddBtn = false; 
 			if(options.popContentView){
 				this.showAddBtn = true;
 				this.popContentTreeView = new options.popContentView({"url" : options.popTreeUrl});

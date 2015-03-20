@@ -1,9 +1,6 @@
-	
-	// @include common.js
-	// @include sidebar-view.js
-	// @include layout-view.js
+ 
 
-	return Talent.Layout.extend({
+	var Layout = Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/show-layout']
 		,initialize: function(data) {
 			var self = this;
@@ -22,30 +19,25 @@
 						{
 							"title": "tita头部",
 							"className": "tita",
-							"type": "one",
+							"type": "One",
 							"selected": "layout_selected"
 						}, {
 							"title": "tms头部",
 							"className": "tms",
-							"type": "two",
+							"type": "Two",
 							"selected": ""
 						}, {
 							"title": "腾讯企业邮箱登陆页",
 							"className": "qqlogin",
-							"type": "four",
+							"type": "Four",
 							"selected": ""
 						}, {
 							"title": "用户自定制",
 							"className": "customize",
-							"type": "three",
+							"type": "Three",
 							"selected": ""
 						}
 					];
-			// this.pageModel = new CustomizationPageModel({
-			// 	productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
-			// });
-			
-			// this.allData = new Talent.Model();
 		}
 		,regions: {
 			leftRegion: '.left_region'
@@ -80,7 +72,7 @@
 		
 			var current = _.findWhere(this.previewList ,{"className" : this.type});
 			var name = current.type;
-			require(['views/common/custom-layouts/'+name+'/sidebar-regions-options']
+			require(['SidebarOptions'+name]
 				,function(SidebarRegionsOptions){
 			
 					var data = self.initData;

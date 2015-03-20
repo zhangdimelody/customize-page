@@ -1,8 +1,4 @@
-define('UploadItem',['talent'
-	,'templates/common'
-],function(Talent
-	,jst
-) {
+define('UploadItem',['talent'],function(Talent){
 	return Talent.ItemView.extend({
 		// template : jst["common/custom-layouts/one/toolbar/upload-item"]
 		initialize: function(options) {

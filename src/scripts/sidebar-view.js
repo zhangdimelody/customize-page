@@ -1,18 +1,11 @@
-	// @include toolbars/one/sidebar-regions-options.js
-	// @include toolbars/pop-content-tree-item-view.js
-	// @include toolbars/popdialog-layout.js
 	
 
-
-
-
-var SidebarView = Talent.Layout.extend({
+define('SidebarView',['talent'],function(Talent){
+	return Talent.Layout.extend({
 		template :  jst['common/custom-layouts/common/sidebar']
 		,initialize: function(options) {
 			var self = this;
-			// this.pageModel = new CustomizationPageModel({
-			// 	productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
-			// });
+			
 			this.viewnames = [];
 			this.model = new Talent.Model();
 			
@@ -61,7 +54,7 @@ var SidebarView = Talent.Layout.extend({
 			$.when.apply(this, this.defers).done(function() {
 				self.regionShowView();
 
-				jscolor.dir = this.getJscolorImageUrl();
+				jscolor.dir = self.getJscolorImageUrl();
 				jscolor.init();
 				
 				self.$el.on('mouseenter', ".hover_item", function(){
@@ -92,7 +85,7 @@ var SidebarView = Talent.Layout.extend({
 		}
 		,getJscolorImageUrl: function() {
 			var staticServer = BSGlobal.staticPath;
-			return staticServer + "/images/";
+			return staticServer + "/images/customizePage/";
 		}
 		,createView:function(){
 			var self = this;
@@ -209,4 +202,5 @@ var SidebarView = Talent.Layout.extend({
 		}
 		,onClose:function(){
 		}
+	});
 });

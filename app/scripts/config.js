@@ -38,5 +38,8 @@ require.config({
 		,'mockjax': {
 			deps: ['$']
 		}
+		,'customizePage': {
+			deps: ['jqueryui','$.tree','jscolor','mockjax']
+		}
 	}
 });

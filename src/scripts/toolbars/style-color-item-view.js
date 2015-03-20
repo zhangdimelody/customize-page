@@ -1,12 +1,4 @@
-define('StyleItem',['talent'
-	,'templates/common'
-	,'jscolor'
-	,'helpers/context'
-],function(Talent
-	,jst
-	,jscolor
-	,Context
-) {
+define('StyleItem',['talent'],function(Talent){
 	return Talent.ItemView.extend({
 		template: jst['common/custom-layouts/common/toolbar/style-color-item']
 		,tagName : 'li'

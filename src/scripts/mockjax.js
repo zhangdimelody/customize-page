@@ -1,4 +1,4 @@
-define(['talent','mockjax'],function(
+define('mockJax',['talent','mockjax'],function(
 	Talent
 	,mockjax
 ){

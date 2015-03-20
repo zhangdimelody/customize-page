@@ -1,10 +1,4 @@
-define('PopContentTreeItem',['talent'
-	,'templates/common'
-	,'models/customization-page-model'
-],function(Talent
-	,jst
-	,CustomizationPageModel
-) {
+define('PopContentTreeItem',['talent','mockJax'],function(Talent){
 	return Talent.ItemView.extend({
 			template : _.template('<ul id="popOrg" class="ztree"></ul>')
 			,initialize:function(options){

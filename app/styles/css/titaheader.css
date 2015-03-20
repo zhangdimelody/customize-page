@@ -39,7 +39,7 @@
   margin-top: 10px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/logo_v3.png);
+  background-image: url(../../images/customizePage/logo_v3.png);
 }
 /* line 27, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .logo_100 {
@@ -47,7 +47,7 @@
   height: 39px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/italent/app_logo_100_v3.png);
+  background-image: url(../../images/customizePage/italent/app_logo_100_v3.png);
 }
 /* line 34, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .logo_400 {
@@ -55,7 +55,7 @@
   height: 39px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/italent/app_logo_400_v2.png);
+  background-image: url(../../images/customizePage/italent/app_logo_400_v2.png);
 }
 /* line 41, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .logo_401 {
@@ -63,7 +63,7 @@
   height: 39px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/italent/app_logo_401.png);
+  background-image: url(../../images/customizePage/italent/app_logo_401.png);
 }
 /* line 48, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .logo_402 {
@@ -71,7 +71,7 @@
   height: 39px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/italent/app_logo_402.png);
+  background-image: url(../../images/customizePage/italent/app_logo_402.png);
 }
 /* line 55, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .logo_500 {
@@ -79,7 +79,7 @@
   height: 39px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/italent/app_logo_500_v2.png);
+  background-image: url(../../images/customizePage/italent/app_logo_500_v2.png);
 }
 /* line 62, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .logo_900 {
@@ -87,7 +87,7 @@
   height: 35px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/xtcc/logos_xtcc.png);
+  background-image: url(../../images/customizePage/xtcc/logos_xtcc.png);
 }
 /* line 69, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .logo_600 {
@@ -95,7 +95,7 @@
   height: 35px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../../images/italent/app_logo_600_v2.png);
+  background-image: url(../../images/customizePage/italent/app_logo_600_v2.png);
 }
 /* line 76, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_header .brand {
@@ -160,7 +160,7 @@
   width: 19px;
   height: 25px;
   padding: 0;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -280px 7px;
   display: inline-block;
   line-height: 9999em;
@@ -169,12 +169,12 @@
 }
 /* line 130, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .msg_tthn a:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -280px -33px;
 }
 /* line 132, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .msg_tthn .active {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -280px -33px;
 }
 /* line 137, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -186,17 +186,17 @@
   line-height: 9999em;
   vertical-align: top;
   overflow: hidden;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -360px -276px;
 }
 /* line 146, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .task_tthn a:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -360px -316px;
 }
 /* line 148, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .task_tthn .active {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -360px -316px;
 }
 /* line 153, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -208,17 +208,17 @@
   line-height: 9999em;
   vertical-align: top;
   overflow: hidden;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -320px -274px;
 }
 /* line 162, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .calendar_tthn a:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -320px -314px;
 }
 /* line 164, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .calendar_tthn .active {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -320px -314px;
 }
 /* line 168, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -234,22 +234,22 @@
   line-height: 9999em;
   vertical-align: top;
   overflow: hidden;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -279px -274px;
 }
 /* line 179, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .notice_tthn a:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -279px -314px;
 }
 /* line 181, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .notice_tthn .disable {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -240px -274px;
 }
 /* line 183, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .notice_tthn .disable:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -240px -314px;
 }
 /* line 188, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -261,12 +261,12 @@
   line-height: 9999em;
   vertical-align: top;
   overflow: hidden;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -280px -274px;
 }
 /* line 197, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .active_notice_tthn a:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -280px -314px;
 }
 /* line 201, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -278,12 +278,12 @@
   line-height: 9999em;
   vertical-align: top;
   overflow: hidden;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -320px 6px;
 }
 /* line 210, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .invite_tthn a:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -320px -34px;
 }
 /* line 214, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -295,12 +295,12 @@
   line-height: 9999em;
   vertical-align: top;
   overflow: hidden;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -360px 6px;
 }
 /* line 223, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 ._tt_headnav .help_tthn a:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -360px -35px;
 }
 /* line 226, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -447,7 +447,7 @@
   float: left;
   width: 35px;
   height: 30px;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -590px 5px;
   display: inline-block;
   line-height: 9999em;
@@ -455,7 +455,7 @@
 }
 /* line 295, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 .tt_headsearch .btn_tths:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -590px -35px;
 }
 /* line 297, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -467,7 +467,7 @@
 }
 /* line 299, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 .tt_headsearch.focus_tt_headsearch .btn_tths {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -590px -33px;
 }
 /* line 300, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
@@ -498,7 +498,7 @@
   height: 6px;
   margin-top: 16.5px;
   padding-right: 0;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -520px -200px;
   display: inline-block;
 }
@@ -508,7 +508,7 @@
 }
 /* line 330, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 .italent_show_app_container:hover .italent_show_app {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -520px -240px;
 }
 
@@ -543,7 +543,7 @@
   color: #fff;
   display: block;
   text-align: center;
-  background: url(../../images/ico_app_v7.png) no-repeat;
+  background: url(../../images/customizePage/ico_app_v7.png) no-repeat;
 }
 /* line 364, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 .talent_app_selector ul .app_200 {
@@ -658,7 +658,7 @@
   width: 18px;
   height: 18px;
   display: inline-block;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -640px 0;
   position: absolute;
   right: 10px;
@@ -667,7 +667,7 @@
 }
 /* line 459, /Users/kcz/talent-ui/tita-web-v4/styles/sass/base/_header.scss */
 .talent_app_selector .closed:hover {
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: -640px -40px;
 }
 
@@ -679,7 +679,7 @@
   top: 50%;
   margin-top: -61px;
   right: 0;
-  background: url("../../images/onlineserver.jpeg");
+  background: url("../../images/customizePage/onlineserver.jpeg");
   cursor: pointer;
   z-index: 9999;
 }
@@ -713,7 +713,7 @@
   width: 33px;
   height: 32px;
   margin: 15px 0 0 0;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: 0 0;
   display: inline-block;
   position: relative;
@@ -724,7 +724,7 @@
 ._tt_sidenav .msg {
   width: 10px;
   height: 9px;
-  background-image: url(../../images/icos_29.png);
+  background-image: url(../../images/customizePage/icos_29.png);
   background-position: 0 -80px;
   display: inline-block;
   position: absolute;
@@ -904,7 +904,7 @@
   display: inline-block;
   width: 12px;
   height: 20px;
-  background: url(../../images/common-s1e70899fe0.png) no-repeat;
+  background: url(../../images/customizePage/common-s1e70899fe0.png) no-repeat;
   background-position: 0 -616px;
 }
 #header-region{ position: relative; }
