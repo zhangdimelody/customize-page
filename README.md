@@ -5,6 +5,7 @@
 * 2. config.js 中paths添加：
 ````
 "customizePage": "vendor/components/customizePage/index"
+
 ````
 shim中添加：
 ````
