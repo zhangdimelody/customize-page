@@ -3,17 +3,22 @@
 ## 使用说明
 * 1. bower.json 中添加 "customize-page" : ""，并执行 bower update
 * 2. config.js 中paths添加：
-````
-"customizePage": "vendor/components/customizePage/index"
 
 ````
+"customizePage": "vendor/components/customizePage/index"
+````
+
 shim中添加：
+
 ````
 'customizePage': {
             deps: ['jqueryui','$.tree','jscolor']
         }
 ````
+
 * 3. 文件内部使用
+
+
 ````
 this.showLayoutView = new ShowLayoutView(resp);
             // 监听保存后的数据
@@ -25,6 +30,7 @@ this.showRegion.show(this.showLayoutView);
 ````
 
 ## 参数说明
+
 ````
 var resp = {
                 type : "tita"   //类型为tita
@@ -124,6 +130,7 @@ var resp = {
                 }
             };
 ````
+
 ## 文件添加
 * images添加 vendor/components/customizePage/src/images/customizePage文件夹
 * css添加 vendor/components/customizePage/src/css/customizePage.css 和 zTreeStyle.css
