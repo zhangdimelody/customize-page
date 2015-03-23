@@ -135,4 +135,4 @@ var resp = {
 * images添加 vendor/components/customizePage/src/images/customizePage文件夹
 * css添加 vendor/components/customizePage/src/css/customizePage.css 和 zTreeStyle.css
 
-## tita参考demo：
+## tita参考demo：http://gitlab.beisen.co/ux/customize-page-demo
