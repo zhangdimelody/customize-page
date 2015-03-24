@@ -131,6 +131,57 @@ var resp = {
             };
 ````
 
+## ajax接口参数说明
+
+````
+funMenu: [
+                {
+                    "children": null,  //是否有二级菜单
+                    "type": 1, //后端标示
+                    "category": 1, //后端标示
+                    "id": "034722fd-78d2-47e3-ae13-4c6717bdcc00", 
+                    "url": "/Recruiting/Job/List", 
+                    "name": "职位", 
+                    "order": 2  //排序
+                },
+                {
+                    "children": null,
+                    "type": 1,
+                    "category": 1,
+                    "id": "fe438cf9-a5ff-4572-8cc9-ae15ed5af80d",
+                    "url": "/Recruiting/RecuritProject/List",
+                    "name": "项目",
+                    "order": 3
+                },
+                {
+                    "children": [
+                        {
+                            "id": "ddec72df-4eaa-414c-8af7-34e321efcd94",
+                            "type": 1,
+                            "order": 0,
+                            "name": "企业人才",
+                            "url": "#pools",
+                            "category": 2
+                        },
+                        {
+                            "id": "d614c38e-05fb-4b6a-ba80-060d23b7f2c8",
+                            "type": 1,
+                            "order": 0,
+                            "name": "录用阶段应聘者",
+                            "url": "#applicants",
+                            "category": 2
+                        }
+                    ],
+                    "type": 1,
+                    "category": 1,
+                    "id": "75b64c85-d13a-4dbf-802a-10faba23b47c",
+                    "url": "/Recruiting/ApplicantManage/AllApplicantList",
+                    "name": "应聘者",
+                    "order": 4
+                }
+            ]
+````
+
 ## 文件添加
 * images添加 vendor/components/customize-page/src/images/customizePage文件夹
 * css添加 vendor/components/customize-page/src/css/customizePage.css 和 zTreeStyle.css
