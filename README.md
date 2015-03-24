@@ -5,7 +5,7 @@
 * 2. config.js 中paths添加：
 
 ````
-"customizePage": "vendor/components/customizePage/index"
+"customizePage": "vendor/components/customize-page/index"
 ````
 
 shim中添加：
@@ -132,7 +132,7 @@ var resp = {
 ````
 
 ## 文件添加
-* images添加 vendor/components/customizePage/src/images/customizePage文件夹
-* css添加 vendor/components/customizePage/src/css/customizePage.css 和 zTreeStyle.css
+* images添加 vendor/components/customize-page/src/images/customizePage文件夹
+* css添加 vendor/components/customize-page/src/css/customizePage.css 和 zTreeStyle.css
 
 ## tita参考demo：http://gitlab.beisen.co/ux/customize-page-demo
