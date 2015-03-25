@@ -2,6 +2,7 @@
 
 	var Layout = Talent.Layout.extend({
 		template: jst['common/custom-layouts/common/show-layout']
+		,className : "custom_outter_wrap"
 		,initialize: function(data) {
 			var self = this;
 			

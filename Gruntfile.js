@@ -119,7 +119,7 @@ module.exports = function( grunt ) {
 					hostname: 'localhost'
 					,port: 8008
 					,base: 'app'
-					,open: 'http://localhost:8000'
+					,open: 'http://localhost:8008'
 				}
 			}
 		}

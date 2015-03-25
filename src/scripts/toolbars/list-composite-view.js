@@ -16,6 +16,11 @@ define('ListComposite',['talent'],function(Talent){
 			}
 			this.title = options.title;
 			
+			if(_.has(options,"inputEdit")){
+				this.inputEdit = options.inputEdit;
+			}else{
+				this.inputEdit = true;
+			}
 
 			this.on("itemview:deleteOne",function(one){
 				this.collection.remove(one.model);
@@ -68,6 +73,10 @@ define('ListComposite',['talent'],function(Talent){
         		}
     		});
 			this.changeEndCss();
+			// 如果是不可编辑
+			if(!this.inputEdit){
+				this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
+			}
 		}
 		,changeEndCss:function(){
 			this.$el.find(".nav_list :last-child dd").addClass("folder_end");

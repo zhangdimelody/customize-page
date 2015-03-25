@@ -4,6 +4,11 @@ define('UploadItem',['talent'],function(Talent){
 		initialize: function(options) {
 			this.template = jst["common/custom-layouts/"+options.templateType+"/toolbar/upload-item"]
 			window['callback'] = this.callback;
+			if(_.has(options,"inputEdit")){
+				this.inputEdit = options.inputEdit;
+			}else{
+				this.inputEdit = true;
+			}
 		}
 		,ui:{
 			'inputChange' : 'input.self_input_c'
@@ -37,6 +42,10 @@ define('UploadItem',['talent'],function(Talent){
 		,onRender: function() {
 		}
 		,onShow: function() {
+			// 如果是不可编辑
+			if(!this.inputEdit){
+				this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
+			}
 		}
 		,onClose:function(){
 		}
