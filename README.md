@@ -120,6 +120,9 @@ var resp = {
                         popTreeUrl : "/tms/custom/getfunctions"
                         ,inputEdit : false
                     }
+                    ,tenantInfo : {
+                        inputMaxLength : 5 //默认可编辑状态的最大长度是10
+                    }
                 }
                 ,relationMap: {  
                 //key 为左侧hover此模块时trigger的名称 
