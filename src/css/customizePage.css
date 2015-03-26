@@ -599,3 +599,4 @@ position: absolute; left: -17px;   margin-top: 15px;
 	to{-webkit-transform:rotateZ(45deg);}
 }
 .custom_outter_wrap .sidebar_wrap dl.block_wrap dd input.js-color{ text-align: center;border-radius: 15px; }
+.custom_outter_wrap span.text_red{ color: red; }
