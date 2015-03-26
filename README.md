@@ -114,9 +114,11 @@ var resp = {
                 ,sidebarViews : {
                     nav : { //需要添加配置的模块名称
                         popTreeUrl : "/tms/custom/getfunctions" //添加一个popTreeUrl 弹出树的url
+                        ,inputEdit : false  //默认是true可编辑状态
                     }
                     ,secondaryNav : {
                         popTreeUrl : "/tms/custom/getfunctions"
+                        ,inputEdit : false
                     }
                 }
                 ,relationMap: {  
