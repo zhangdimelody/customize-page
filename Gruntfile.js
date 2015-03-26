@@ -17,6 +17,8 @@ module.exports = function( grunt ) {
 			,preprocess: {
 				files: [
 					'src/scripts/*.js'
+					,'src/scripts/toolbars/*.js'
+					,'src/scripts/toolbars/one/*.js'
 				]
 				,tasks: 'preprocess'
 			}

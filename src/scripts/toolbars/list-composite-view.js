@@ -12,6 +12,10 @@ define('ListComposite',['talent'],function(Talent){
 					this.$el.find(".nav_list :last-child dd").removeClass("folder_end");
 					this.collection.add(new Talent.Model(selectedNode));
 					this.changeEndCss();
+					// 如果是不可编辑
+					if(!this.inputEdit){
+						this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
+					}
 				},this);
 			}
 			this.title = options.title;
@@ -29,7 +33,6 @@ define('ListComposite',['talent'],function(Talent){
 		}
 		,ui:{
 			'addnav' : 'span.add_nav'
-			// ,'navRadio' : 'input[name=navi]'
 		}
 		,events:function(){
 			var events = {};
@@ -38,7 +41,7 @@ define('ListComposite',['talent'],function(Talent){
 			return events;
 		}
 		,addNav:function(e){
-			
+
 			var addBtn = $(e.currentTarget);
 			
 			this.trigger('pop', {

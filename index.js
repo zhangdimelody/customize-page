@@ -2,7 +2,7 @@
 	        
 	        this["JST"] = this["JST"] || {};
 	
-	          this["JST"]["common/custom-layouts/common/layout"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<div class="layout_wrap"></div>\r\n';}return __p};
+	        this["JST"]["common/custom-layouts/common/layout"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<div class="layout_wrap"></div>\r\n';}return __p};
 	
 	       this["JST"]["common/custom-layouts/common/pop-content-tree-item"] = function(obj) {obj || (obj = {});var __t, __p = '', __e = _.escape;with (obj) {__p += '<h3>common/custom-layouts/common/pop-content-tree</h3>\n<p class="lead">\n\t<strong>View: </strong>\n\t<small>\n\t\t<input style="border:none;width:80%;" \n\t\t\tonmouseover="this.select()"\n\t\t\tonmouseout="this.blur()"\n\t\t value="app\\scripts\\views\\common\\custom-layouts\\common\\pop-content-tree-item-view.js" />\n\t</small>\n</p>\n<p class="lead">\n\t<strong>Template: </strong>\n\t<small>\n\t\t<input style="border:none;width:80%;" \n\t\t\tonmouseover="this.select()"\n\t\t\tonmouseout="this.blur()"\n\t\t value="app\\templates\\common\\custom-layouts\\common\\pop-content-tree-item.html" />\n\t</small>\n</p>';}return __p};
 	
@@ -107,6 +107,10 @@
 						this.$el.find(".nav_list :last-child dd").removeClass("folder_end");
 						this.collection.add(new Talent.Model(selectedNode));
 						this.changeEndCss();
+						// 如果是不可编辑
+						if(!this.inputEdit){
+							this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
+						}
 					},this);
 				}
 				this.title = options.title;
@@ -124,7 +128,6 @@
 			}
 			,ui:{
 				'addnav' : 'span.add_nav'
-				// ,'navRadio' : 'input[name=navi]'
 			}
 			,events:function(){
 				var events = {};
@@ -133,7 +136,7 @@
 				return events;
 			}
 			,addNav:function(e){
-				
+	
 				var addBtn = $(e.currentTarget);
 				
 				this.trigger('pop', {
@@ -1036,12 +1039,12 @@ define(['talent','SidebarView','LayoutView'],function(talent,SidebarView,LayoutV
 				if(operateNode.hasClass("right_wrap_hide")){
 					this.ui.previewArrow.addClass("preview_up");
 					operateNode.removeClass("right_wrap_hide");
-					this.$el.find(".right_wrap").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
+					// this.$el.find(".right_wrap").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
 					this.setRightWidth();
 				}else{
 					this.ui.previewArrow.addClass("preview_down");
 					operateNode.addClass("right_wrap_hide");
-					this.$el.find(".right_wrap").css({'width':"100%" });
+					// this.$el.find(".right_wrap").css({'width':"100%" });
 				}
 			}
 			,onShow:function(){
@@ -1096,7 +1099,7 @@ define(['talent','SidebarView','LayoutView'],function(talent,SidebarView,LayoutV
 				this.sidebarView.$el.find("span.save_set_info").attr("type",name);
 			}
 			,setRightWidth:function(){
-				this.$el.find(".right_region").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
+				// this.$el.find(".right_region").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
 			}
 			,onClose:function(){
 			}

@@ -60,12 +60,12 @@
 			if(operateNode.hasClass("right_wrap_hide")){
 				this.ui.previewArrow.addClass("preview_up");
 				operateNode.removeClass("right_wrap_hide");
-				this.$el.find(".right_wrap").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
+				// this.$el.find(".right_wrap").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
 				this.setRightWidth();
 			}else{
 				this.ui.previewArrow.addClass("preview_down");
 				operateNode.addClass("right_wrap_hide");
-				this.$el.find(".right_wrap").css({'width':"100%" });
+				// this.$el.find(".right_wrap").css({'width':"100%" });
 			}
 		}
 		,onShow:function(){
@@ -120,7 +120,7 @@
 			this.sidebarView.$el.find("span.save_set_info").attr("type",name);
 		}
 		,setRightWidth:function(){
-			this.$el.find(".right_region").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
+			// this.$el.find(".right_region").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
 		}
 		,onClose:function(){
 		}
