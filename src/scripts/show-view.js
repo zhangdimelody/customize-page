@@ -81,7 +81,7 @@
 					var data = self.initData;
 					self.createView(data,SidebarRegionsOptions,name);
 			});
-			
+			this.trigger('showDone',this);
 		}
 		,createView:function(data,SidebarRegionsOptions,name){
 			// 将用户定义的options和配好的options合并
