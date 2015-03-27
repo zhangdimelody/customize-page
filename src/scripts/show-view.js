@@ -62,10 +62,12 @@
 				operateNode.removeClass("right_wrap_hide");
 				// this.$el.find(".right_wrap").css({'width':window.innerWidth-parseInt(this.$el.find(".left_region").css("width"))-15});
 				this.setRightWidth();
+				this.trigger('preview',false);
 			}else{
 				this.ui.previewArrow.addClass("preview_down");
 				operateNode.addClass("right_wrap_hide");
 				// this.$el.find(".right_wrap").css({'width':"100%" });
+				this.trigger('preview',true);
 			}
 		}
 		,onShow:function(){
