@@ -21,8 +21,12 @@ shim中添加：
 
 ````
 this.showLayoutView = new ShowLayoutView(resp);
-            // 监听保存后的数据
+// 监听保存后的数据
 this.listenTo(this.showLayoutView,"saveConfigData",function(data){
+                console.log(data);
+            },this);
+// 监听是否处于预览状态 data是true则是预览状态
+this.listenTo(this.showLayoutView,"preview",function(data){
                 console.log(data);
             },this);
 this.showRegion.show(this.showLayoutView);
