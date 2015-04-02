@@ -94,96 +94,94 @@
 	}) 
 	
 	define('ListComposite',['talent'],function(Talent){
-	
-		return Talent.CompositeView.extend({
-			template: jst['common/custom-layouts/common/toolbar/list-composite']
-			,itemViewContainer : ".nav_list"
-			,initialize: function(options) {
-				this.showAddBtn = false; 
-				if(options.popContentView){
-					this.showAddBtn = true;
-					this.popContentTreeView = new options.popContentView({"url" : options.popTreeUrl});
-					this.listenTo(this.popContentTreeView,'selected',function(selectedNode){
-						this.$el.find(".nav_list :last-child dd").removeClass("folder_end");
-						this.collection.add(new Talent.Model(selectedNode));
+		
+			return Talent.CompositeView.extend({
+				template: jst['common/custom-layouts/common/toolbar/list-composite']
+				,itemViewContainer : ".nav_list"
+				,initialize: function(options) {
+					this.showAddBtn = false; 
+					if(options.popContentView){
+						this.showAddBtn = true;
+						this.popContentTreeView = new options.popContentView(options);
+						this.listenTo(this.popContentTreeView,'selected',function(selectedNode){
+							this.$el.find(".nav_list :last-child dd").removeClass("folder_end");
+							this.collection.add(new Talent.Model(selectedNode));
+							this.changeEndCss();
+							// 如果是不可编辑
+							if(!this.inputEdit){
+								this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
+							}
+						},this);
+					}
+					this.title = options.title;
+					
+					if(_.has(options,"inputEdit")){
+						this.inputEdit = options.inputEdit;
+					}else{
+						this.inputEdit = true;
+					}
+		
+					this.on("itemview:deleteOne",function(one){
+						this.collection.remove(one.model);
 						this.changeEndCss();
-						// 如果是不可编辑
-						if(!this.inputEdit){
-							this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
-						}
 					},this);
 				}
-				this.title = options.title;
-				
-				if(_.has(options,"inputEdit")){
-					this.inputEdit = options.inputEdit;
-				}else{
-					this.inputEdit = true;
+				,ui:{
+					'addnav' : 'span.add_nav'
 				}
-	
-				this.on("itemview:deleteOne",function(one){
-					this.collection.remove(one.model);
+				,events:function(){
+					var events = {};
+					events['click ' + this.ui.addnav] = 'addNav';
+					events['click ' + this.ui.navRadio] = 'clickRadio';
+					return events;
+				}
+				,addNav:function(e){
+					var addBtn = $(e.currentTarget);
+					
+					this.trigger('pop', {
+						contentView: this.popContentTreeView
+						,title: this.title
+						,triggerNode: addBtn
+					});
+				}
+				,onRender: function() {
+				}
+				,onShow: function() {
+					var self = this;
+					this.$el.find("span.title").html(this.title);
+					if(!(this.showAddBtn)){
+						this.$el.find("span.add_icon").hide();
+					}
+					this.$el.find(".nav_list").sortable({ 
+						stop: function() {
+							var ids = new Array();
+							var newData = new Array();
+							var allwrap = self.$el.find("dd.sort_wrap");
+		
+							_.each(allwrap,function(item){
+								var id = $(item).attr("id");
+								var one = _.findWhere(self.collection.toJSON(),{"id":id});
+								ids.push(id);
+								newData.push(one);
+							});
+		
+							self.collection.reset(newData);
+							self.changeEndCss();
+		        		}
+		    		});
 					this.changeEndCss();
-				},this);
-			}
-			,ui:{
-				'addnav' : 'span.add_nav'
-			}
-			,events:function(){
-				var events = {};
-				events['click ' + this.ui.addnav] = 'addNav';
-				events['click ' + this.ui.navRadio] = 'clickRadio';
-				return events;
-			}
-			,addNav:function(e){
-	
-				var addBtn = $(e.currentTarget);
-				
-				this.trigger('pop', {
-					contentView: this.popContentTreeView
-					,title: this.title
-					,triggerNode: addBtn
-				});
-			}
-			,onRender: function() {
-			}
-			,onShow: function() {
-				var self = this;
-				this.$el.find("span.title").html(this.title);
-				if(!(this.showAddBtn)){
-					this.$el.find("span.add_icon").hide();
+					// 如果是不可编辑
+					if(!this.inputEdit){
+						this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
+					}
 				}
-				this.$el.find(".nav_list").sortable({ 
-					stop: function() {
-						var ids = new Array();
-						var newData = new Array();
-						var allwrap = self.$el.find("dd.sort_wrap");
-	
-						_.each(allwrap,function(item){
-							var id = $(item).attr("id");
-							var one = _.findWhere(self.collection.toJSON(),{"id":id});
-							ids.push(id);
-							newData.push(one);
-						});
-	
-						self.collection.reset(newData);
-						self.changeEndCss();
-	        		}
-	    		});
-				this.changeEndCss();
-				// 如果是不可编辑
-				if(!this.inputEdit){
-					this.$el.find("input[type=text]").addClass('disabled').attr('disabled','disabled');
+				,changeEndCss:function(){
+					this.$el.find(".nav_list :last-child dd").addClass("folder_end");
 				}
-			}
-			,changeEndCss:function(){
-				this.$el.find(".nav_list :last-child dd").addClass("folder_end");
-			}
-			,onClose:function(){
-			}
+				,onClose:function(){
+				}
+			});
 		});
-	});
-	
 	define('StyleItem',['talent'],function(Talent){
 		return Talent.ItemView.extend({
 			template: jst['common/custom-layouts/common/toolbar/style-color-item']
@@ -370,58 +368,60 @@
 				});
 	});
 	
-	define('PopContentTreeItem',['talent','mockJax'],function(Talent){
-		return Talent.ItemView.extend({
-				template : _.template('<ul id="popOrg" class="ztree"></ul>')
-				,initialize:function(options){
-					// 这是tree的setting
-					this.setting = {
-						data: {
-							key: {
-								id: "ID",
-								name: "Text",
-								children:"Functions",
-								url:"javascript:;" //先置为不存在的属性
-							},
-							simpleData: {
-								enable: true
+		define('PopContentTreeItem',['talent','mockJax'],function(Talent){
+			return Talent.ItemView.extend({
+					template : _.template('<ul id="popOrg" class="ztree"></ul>')
+					,initialize:function(options){
+						// 这是tree的setting
+						this.setting = {
+							data: {
+								key: {
+									id: "ID",
+									name: "Text",
+									children:"Functions",
+									url:"javascript:;" //先置为不存在的属性
+								},
+								simpleData: {
+									enable: true
+								}
 							}
+						};
+						this.options = options;
+						
+						// this.url = options.url;
+					}
+					,onSubmit:function(){ 
+						var checkedNode = $.fn.zTree.getZTreeObj("popOrg").getSelectedNodes();
+						var selectedNode = {
+										"id" : checkedNode[0].ID
+										,"name" : checkedNode[0].Text
+										,"category": checkedNode[0].Category
+										,"type" : checkedNode[0].Type
+										,"url" : checkedNode[0].Url
+										,"className" : "plan_ttsn"
+									};
+						this.trigger("selected",selectedNode);
+						this.$el.parent().parent().hide();
+					}
+					,onCancel:function(){
+					}
+					,onRender:function(){
+					}
+					,onShow:function(){
+						var self = this;
+						
+						if(_.has(this.options,'popTreeUrl')){
+							var getTreeModel = new Talent.Model();
+							getTreeModel.url = this.options.popTreeUrl;
+							getTreeModel.fetch().done(function(resp){
+								$.fn.zTree.init(self.$el.find("#popOrg"), self.setting, resp.funMenu);
+							});
+						}else{
+							$.fn.zTree.init(self.$el.find("#popOrg"), self.setting, this.options.popTreeUData);
 						}
-					};
-					this.url = options.url;
-				}
-				,onSubmit:function(){ 
-					var checkedNode = $.fn.zTree.getZTreeObj("popOrg").getSelectedNodes();
-					var selectedNode = {
-									"id" : checkedNode[0].ID
-									,"name" : checkedNode[0].Text
-									,"category": checkedNode[0].Category
-									,"type" : checkedNode[0].Type
-									,"url" : checkedNode[0].Url
-									,"className" : "plan_ttsn"
-								};
-					this.trigger("selected",selectedNode);
-					this.$el.parent().parent().hide();
-				}
-				,onCancel:function(){
-				}
-				,onRender:function(){
-				}
-				,onShow:function(){
-					var self = this;
-					// var pageModel = new CustomizationPageModel({
-					// 	productId: 'FFF63665-BD80-46CC-8866-192C64118EFE'
-					// });
-					var getTreeModel = new Talent.Model();
-					getTreeModel.url = this.url;
-					getTreeModel.fetch().done(function(resp){
-						console.log(resp);
-						$.fn.zTree.init(self.$el.find("#popOrg"), self.setting, resp.funMenu);
-					})
-				}
+					}
+			});
 		});
-	});
-	
 	define('PopDialogLayout',['talent'],function(Talent){
 		return Talent.Layout.extend({
 			template: jst['common/custom-layouts/common/popdialog-layout']
@@ -550,8 +550,61 @@
 				}
 	});
 	
-		
-	
+	define('SidebarOptionsTwo',['talent'
+			],function(Talent
+				,jst
+			){
+				return {
+							nav: {
+										path : "ListComposite"
+										,initOptions:{ 
+													itemView:'ListItemOne'
+													,title:"导航栏"
+													,dataType : "Collection"
+													,popContentView : "PopContentTreeItem"
+													,showDirAddBtn : true
+													// ,collection:new Talent.Collection(nav)
+												}
+										,events:{
+													"collection" :"change remove reset add"
+												}
+									}
+							,style: {
+										path : "StyleComposite"
+										,initOptions: { 
+													itemView : 'StyleItem'
+													,dataType : "Collection"
+													// ,collection : new Talent.Collection(style) 
+												}
+										,events: {
+													"collection" :"change"
+												}
+									}
+							
+							,tenantInfo: {
+											path:"UploadItem"
+											,initOptions:{ 
+														templateType : "two"
+														,dataType : "Model"
+														// ,model : new Talent.Model(upload)
+													}
+											,events:{
+														"model" :"change"
+													}
+										}
+							,popdialog:{
+											path:"PopDialogLayout"
+											,initOptions:{
+														// itemView:'views/common/custom-layouts/two/toolbar/userinfo-list-item-view'
+														// ,title:"用户设置"
+														// ,collection:new Talent.Collection(userInfoData)
+													}
+											,events:{
+														// "collection" :"change remove reset add"
+													}
+										}
+						};
+		});
 	define('SidebarView',['talent'],function(Talent){
 		return Talent.Layout.extend({
 			template :  jst['common/custom-layouts/common/sidebar']
@@ -686,7 +739,6 @@
 							});
 						});
 					});
-					
 					// 结束create view
 				});
 			}
@@ -756,7 +808,6 @@
 			}
 		});
 	});
-	
 	define('LayoutView',['talent'],function(Talent){
 		return Talent.Layout.extend({
 			template: jst['common/custom-layouts/common/layout']

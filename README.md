@@ -117,7 +117,25 @@ var resp = {
                 //左侧的配置，
                 ,sidebarViews : {
                     nav : { //需要添加配置的模块名称
-                        popTreeUrl : "/tms/custom/getfunctions" //添加一个popTreeUrl 弹出树的url
+                        popTreeUData : [ //pop弹窗的数据 （可以传数据popTreeData 或者 链接popTreeUrl）
+                            {
+                                "Functions": null,
+                                "Type": 1,
+                                "Category": 1,
+                                "ID": "034722fd-78d2-47e3-ae13-4c6717bdcc00",
+                                "Url": "/Recruiting/Job/List",
+                                "Text": "职位",
+                                "Order": 2
+                            },
+                            {
+                                "Functions": null,
+                                "Type": 1,
+                                "Category": 1,
+                                "ID": "fe438cf9-a5ff-4572-8cc9-ae15ed5af80d",
+                                "Url": "/Recruiting/RecuritProject/List",
+                                "Text": "项目",
+                                "Order": 3
+                            }] //添加一个popTreeUrl 弹出树的url
                         ,inputEdit : false  //默认是true可编辑状态
                     }
                     ,secondaryNav : {

@@ -1,5 +1,3 @@
-	
-
 define('SidebarView',['talent'],function(Talent){
 	return Talent.Layout.extend({
 		template :  jst['common/custom-layouts/common/sidebar']
@@ -134,7 +132,6 @@ define('SidebarView',['talent'],function(Talent){
 						});
 					});
 				});
-				
 				// 结束create view
 			});
 		}

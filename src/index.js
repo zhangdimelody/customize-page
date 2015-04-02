@@ -7,6 +7,7 @@
 	// @include scripts/toolbars/pop-content-tree-item-view.js
 	// @include scripts/toolbars/popdialog-layout.js
 	// @include scripts/toolbars/one/sidebar-regions-options.js
+	// @include scripts/toolbars/two/sidebar-regions-options.js
 	// @include scripts/sidebar-view.js
 	// @include scripts/layout-view.js
 	// @include scripts/mockjax.js
