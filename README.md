@@ -144,6 +144,7 @@ var resp = {
                     }
                     ,tenantInfo : {
                         inputMaxLength : 5 //默认可编辑状态的最大长度是10
+                        ,uploadUrl : "/upload111111" //上传接口
                     }
                 }
                 ,relationMap: {  
