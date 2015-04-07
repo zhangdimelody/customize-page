@@ -15,7 +15,6 @@
 				self.setRightWidth();
 				self.sidebarView.setHeight();
 			};
-
 			this.previewList = [
 						{
 							"title": "tita头部",
