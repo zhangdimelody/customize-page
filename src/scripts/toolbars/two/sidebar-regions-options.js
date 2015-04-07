@@ -43,12 +43,9 @@ define('SidebarOptionsTwo',['talent'
 						,popDialog:{
 										path:"PopDialogLayout"
 										,initOptions:{
-													// itemView:'views/common/custom-layouts/two/toolbar/userinfo-list-item-view'
-													// ,title:"用户设置"
-													// ,collection:new Talent.Collection(userInfoData)
+													
 												}
 										,events:{
-													// "collection" :"change remove reset add"
 												}
 									}
 					};
