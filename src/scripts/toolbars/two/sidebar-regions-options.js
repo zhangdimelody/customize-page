@@ -40,7 +40,7 @@ define('SidebarOptionsTwo',['talent'
 													"model" :"change"
 												}
 									}
-						,popdialog:{
+						,popDialog:{
 										path:"PopDialogLayout"
 										,initOptions:{
 													// itemView:'views/common/custom-layouts/two/toolbar/userinfo-list-item-view'
