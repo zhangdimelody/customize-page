@@ -29,6 +29,10 @@ this.listenTo(this.showLayoutView,"saveConfigData",function(data){
 this.listenTo(this.showLayoutView,"preview",function(data){
                 console.log(data);
             },this);
+// 监听上传的返回值
+this.listenTo(this.showLayoutView,"UploadResponse",function(data){
+                console.log(data);
+            });
 this.showRegion.show(this.showLayoutView);
 
 ````
@@ -144,7 +148,13 @@ var resp = {
                     }
                     ,tenantInfo : {
                         inputMaxLength : 5 //默认可编辑状态的最大长度是10
-                        ,uploadUrl : "/upload111111" //上传接口
+                        ,uploadUrl : "/upload22" //上传接口
+                        ,callbackName : "jsCallback" //供给后端callback名称 默认名称为callback
+                        ,uploadInfoMap : {//  key为input的name 
+                        // <input type="hidden" name="jsCallback" value="parent._callback__910">
+                             "jsCallback" : "parent._callback__910" 
+                            ,"domain" : "document.domain='tita-inc.com'"
+                        }
                     }
                 }
                 ,relationMap: {  
