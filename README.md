@@ -29,10 +29,6 @@ this.listenTo(this.showLayoutView,"saveConfigData",function(data){
 this.listenTo(this.showLayoutView,"preview",function(data){
                 console.log(data);
             },this);
-// 监听上传的返回值
-this.listenTo(this.showLayoutView,"UploadResponse",function(data){
-                console.log(data);
-            });
 this.showRegion.show(this.showLayoutView);
 
 ````
